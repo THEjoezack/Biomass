@@ -3,6 +3,7 @@ var Game =  {
     _currentScreen: null,
     _screenWidth: 80,
     _screenHeight: 24,
+    Screen: {},
 	init: function() {
         // Any necessary initialization will go here.
         this._display = new ROT.Display({width: this._screenWidth,
