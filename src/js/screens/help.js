@@ -1,4 +1,3 @@
-// Define our help screen
 Game.Screen.helpScreen = {
     render: function(display) {
         var text = 'jsrogue help';
