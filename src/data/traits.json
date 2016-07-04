@@ -1,0 +1,46 @@
+{
+    "traits": [
+        {
+            "id": "horns",
+            "name": "horns",
+            "cost": 10,
+            "effects": [
+                {
+                    "description": "{0} chance to do {1} damage on {2}",
+                    "percentage": 10,
+                    "damage": "1d2",
+                    "damagetype": "physical",
+                    "on": "attack"
+                }
+            ]
+        },
+        {
+            "id": "antlers",
+            "name": "antlers",
+            "cost": 10,
+            "effects": [
+                {
+                    "description": "{0} chance to do {1} damage on {2}",
+                    "percentage": 15,
+                    "damage": "1d3",
+                    "damagetype": "physical",
+                    "on": "attack"
+                }
+            ],
+            "replaces": "horns"
+        },
+        {
+            "id": "thickskin",
+            "name": "thick skin",
+            "cost": 10,
+            "effects": [
+                {
+                    "description": "+{0} defense",
+                    "defense": "1",
+                    "defensetype": "physical",
+                    "on": "attack"
+                }
+            ]
+        }
+    ]
+}

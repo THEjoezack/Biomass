@@ -5,6 +5,7 @@
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
+        "rootDir": "src/ts",
         "outFile": "dist/bundle.js",
         "sourceMap": true
     },

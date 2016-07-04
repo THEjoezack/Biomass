@@ -12,9 +12,19 @@ https://github.com/ondras/rot.js
 https://github.com/jokeofweek/jsrogue/
 
 ## TODO
-* Key bindings screen
 
+### Goals
+* Have fun
+* Learn TypeScript!
+
+### Core mechanics
+* Evolution theme, monsters should evolve too!
+* Use "biomass" as singular currency to level up, evolve, heal, buff items
+
+## Nice to haves that I care about
+* Skill tree like evolution system!
+* Unlocks
 * autopickup some items
-* Theme brainstorming
- * "Biomass" can be used as currency for upgrading, or even using certain abilities
- 
+* good targetting
+* Not too many items
+* Game should be over in an hour
