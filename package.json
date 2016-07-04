@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node src/spec"
+    "test": "gulp test"
   },
   "author": "",
   "license": "MIT",
@@ -13,6 +13,7 @@
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-bower": "0.0.13",
+    "gulp-jasmine": "^2.4.0",
     "gulp-jshint": "^2.0.1",
     "gulp-typescript": "^2.13.6",
     "jasmine-node": "^1.14.5",

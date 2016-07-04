@@ -3,7 +3,6 @@ var transpiled = fs.readFileSync('./dist/bundle.js','utf-8');
 eval(transpiled);
 
 describe("A trait", function() {
-
     it("can be loaded from a json object", function() {
         var trait = new Traits.Trait();
         trait.load({ name: 'name' });
@@ -25,5 +24,13 @@ describe("A trait", function() {
         });
         expect(trait.effects[0].description).toEqual('test 1');
         expect(trait.effects[1].description).toEqual('test 2');
+    });
+});
+
+describe("A cumulative effect", function() {
+    it("can be loaded from a json object", function() {
+        var effect = new Traits.CumulativeEffect();
+        effect.load({ description: 'description' });
+        expect(effect.description).toEqual('description');
     });
 });

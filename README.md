@@ -13,6 +13,11 @@ https://github.com/jokeofweek/jsrogue/
 
 ## TODO
 
+### Up next...
+* Allow player to spend xp on traits
+    * Show trait screen
+        * Load traits from file
+
 ### Goals
 * Have fun
 * Learn TypeScript!
