@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 gulp.task("default", function () {
     return tsProject.src()
         .pipe(ts(tsProject))
-        .js.pipe(gulp.dest("."));
+        .js.pipe(gulp.dest("./dist"));
 });
 
 gulp.task("test", ['default'], function () {

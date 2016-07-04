@@ -1,12 +1,11 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "rootDir": "src/ts",
-        "outFile": "dist/bundle.js",
+        "rootDir": "./src/ts",
+        "outDir": "./dist",
         "sourceMap": true
     },
     "exclude": [

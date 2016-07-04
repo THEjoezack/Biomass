@@ -17,6 +17,8 @@ https://github.com/jokeofweek/jsrogue/
 * Allow player to spend xp on traits
     * Show trait screen
         * Load traits from file
+    * Character screen should show traits / basic info
+    * "Digging" should be a trait!
 
 ### Goals
 * Have fun

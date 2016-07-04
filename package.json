@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "http-server &"
   },
   "author": "",
   "license": "MIT",
@@ -18,5 +19,8 @@
     "gulp-typescript": "^2.13.6",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.9.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }

@@ -1,5 +1,5 @@
 var fs = require('fs');
-var transpiled = fs.readFileSync('./dist/bundle.js','utf-8');
+var transpiled = fs.readFileSync('./dist/Traits.js','utf-8');
 eval(transpiled);
 
 describe("A trait", function() {
