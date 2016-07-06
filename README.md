@@ -11,6 +11,16 @@ Based on...
 https://github.com/ondras/rot.js
 https://github.com/jokeofweek/jsrogue/
 
+## Getting started
+* npm cache clean #(if you run into anything weird)
+* npm install gulp #(if you don't have it already)
+* npm install #(from dir)
+* gulp bower #(get ROT)
+* gulp
+* gulp test
+* npm install -g http-server
+* http-server
+
 ## TODO
 
 ### Up next...
