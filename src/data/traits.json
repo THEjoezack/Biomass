@@ -27,7 +27,8 @@
                     "on": "attack"
                 }
             ],
-            "replaces": "horns"
+            "replacesId": "horns",
+            "requiresId": "horns"
         },
         {
             "id": "thickskin",

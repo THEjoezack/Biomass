@@ -24,12 +24,15 @@ https://github.com/jokeofweek/jsrogue/
 ## TODO
 
 ### Up next...
-* Allow player to spend xp on traits
-    * Show trait screen
-        * Load traits from file
-    * Character screen should show traits / basic info
-    * "Digging" should be a trait!
-
+* Traits!
+  * Figure out which traits are selectable, given a tree
+  * Traits should "add" in additional stats
+  * Show trait screen
+    * Load traits from file
+  * Character screen should show traits / basic info
+  * Allow player to spend xp on traits
+  * "Digging" should be a trait!
+    
 ### Goals
 * Have fun
 * Learn TypeScript!
