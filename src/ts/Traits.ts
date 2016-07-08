@@ -93,7 +93,7 @@ module Traits {
          */
         findById(id:string, children?:Array<TraitNode>):TraitNode {
             let result:TraitNode = null;
-            this.depthFirst(
+            this.traverse(
                 function(node:TraitNode):boolean {
                     if(node.node.id == id) {
                         result = node;
@@ -106,12 +106,28 @@ module Traits {
         }
 
         /**
-         * Do a depth search travelersal of the tree performing the 
-         * action for each node (including the root). If the action returns "true"
+         * Turn a tree into an array, depth first
+         */
+        flatten(source:TraitNode):Array<TraitNode> {
+            let result = new Array<TraitNode>();
+            this.traverse(
+                function(node:TraitNode):boolean {
+                    if(node.node.id) {
+                        result.push(node);
+                    }
+                    return false;
+                }
+            );
+            return result;
+        }
+
+        /**
+         * Traverse the tree performing the action for each node
+         * (including the root). If the action returns "true"
          * then the execution will stop.
          * Returns true if condition is action returns true, false otherwise.
          */
-        depthFirst(action:TraitNodeTraversalAction, node?:TraitNode):boolean {
+        traverse(action:TraitNodeTraversalAction, node?:TraitNode):boolean {
             let root = node || this;
             let rootResult = action(root);
 
@@ -120,7 +136,7 @@ module Traits {
             }
 
             for(let c of root.children) {
-                let result = this.depthFirst(action, c);
+                let result = this.traverse(action, c);
                 if(result) {
                     return true;
                 }
@@ -173,12 +189,5 @@ module Traits {
             return result;
         }
 
-        /**
-         * Turn a tree into an area, depth first
-         */
-        flatten(source:TraitNode):Array<TraitNode> {
-            let result = new Array<TraitNode>();
-            return result;
-        }
     }
 }

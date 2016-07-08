@@ -34,9 +34,54 @@ describe("A cumulative effect", function() {
 
 describe("A trait node", function() {
 
+    var sampleInput = {
+        "traits": [
+            {
+                "id": "topLevelWithChildren"
+            },
+            {
+                "id": "children",
+                "requiresId": "topLevelWithChildren"
+            },
+            {
+                "id": "topLevelNoChildren"
+            }
+        ]
+    };
+
     it("has children initialized by default", function() {
         var target = new Traits.TraitNode();
         expect(target.children).toEqual([]);
+    });
+
+    it("can traverse itself (depth first) and perform an action", function() {
+        var target = new Traits.TraitNode();
+        target.load(sampleInput);
+
+        var result = [];
+        target.traverse(
+            function(node) {
+                if(node.node.id) {
+                    result.push(node.node.id);
+                }
+                return false;
+            }
+        );
+        expect(result.join(',')).toEqual("topLevelWithChildren,children,topLevelNoChildren");
+    });
+
+    it("can flatten itself (depth first) into an array", function() {
+        var target = new Traits.TraitNode();
+        target.load(sampleInput);
+
+        var result = target.flatten();
+        var serialized = [];
+
+        for(var i = 0; i < result.length; i++) {
+            serialized.push(result[i].node.id);
+        }
+
+        expect(serialized.join(',')).toEqual("topLevelWithChildren,children,topLevelNoChildren");
     });
 
     it("can find itself by id", function() {
@@ -58,20 +103,6 @@ describe("A trait node", function() {
     });
 
     describe("that is loaded from a json object (array)", function() {
-        var sampleInput = {
-            "traits": [
-                {
-                    "id": "topLevelNoChildren"
-                },
-                {
-                    "id": "topLevelWithChildren"
-                },
-                {
-                    "id": "children",
-                    "requiresId": "topLevelWithChildren"
-                },
-            ]
-        };
         it("and can have nodes with no children", function() {
             var root = new Traits.TraitNode();
             root.load(sampleInput); // blech...should probably change the constructor so it loads by default?
