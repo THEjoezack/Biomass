@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Trait | Biomass</title>
+	<title>TraitNodeComparator | Biomass</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -63,10 +63,10 @@
 					<a href="../modules/_traits_.traits.html">Traits</a>
 				</li>
 				<li>
-					<a href="_traits_.traits.trait.html">Trait</a>
+					<a href="_traits_.traits.traitnodecomparator.html">TraitNodeComparator</a>
 				</li>
 			</ul>
-			<h1>Class Trait</h1>
+			<h1>Class TraitNodeComparator</h1>
 		</div>
 	</div>
 </header>
@@ -76,8 +76,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Traits represent passive or active abilities that can be
-						acquired by a character.</p>
+						<p>Compares TraitNode to each other</p>
 					</div>
 				</div>
 			</section>
@@ -85,14 +84,8 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Trait</span>
+						<span class="target">TraitNodeComparator</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_traits_.traits.loadable.html" class="tsd-signature-type">Loadable</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -100,143 +93,73 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_traits_.traits.trait.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.trait.html#cost" class="tsd-kind-icon">cost</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.trait.html#effects" class="tsd-kind-icon">effects</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.trait.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.trait.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.trait.html#replacesid" class="tsd-kind-icon">replaces<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.trait.html#requiresid" class="tsd-kind-icon">requires<wbr>Id</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.trait.html#load" class="tsd-kind-icon">load</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.traitnodecomparator.html#flatten" class="tsd-kind-icon">flatten</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.traitnodecomparator.html#getpurchasabletraits" class="tsd-kind-icon">get<wbr>Purchasable<wbr>Traits</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Trait<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_traits_.traits.trait.html" class="tsd-signature-type">Trait</a></li>
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="flatten" class="tsd-anchor"></a>
+					<h3>flatten</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in Traits.ts:49</li>
+									<li>Defined in Traits.ts:178</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Turn a tree into an area, depth first</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> input: <span class="tsd-signature-type">any</span></h5>
+									<h5>source: <a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_traits_.traits.trait.html" class="tsd-signature-type">Trait</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="cost" class="tsd-anchor"></a>
-					<h3>cost</h3>
-					<div class="tsd-signature tsd-kind-icon">cost<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Traits.ts:46</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="effects" class="tsd-anchor"></a>
-					<h3>effects</h3>
-					<div class="tsd-signature tsd-kind-icon">effects<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.cumulativeeffect.html" class="tsd-signature-type">CumulativeEffect</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Traits.ts:47</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Traits.ts:44</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Traits.ts:45</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="replacesid" class="tsd-anchor"></a>
-					<h3>replaces<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">replaces<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Traits.ts:48</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="requiresid" class="tsd-anchor"></a>
-					<h3>requires<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">requires<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in Traits.ts:49</li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="load" class="tsd-anchor"></a>
-					<h3>load</h3>
+					<a name="getpurchasabletraits" class="tsd-anchor"></a>
+					<h3>get<wbr>Purchasable<wbr>Traits</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Purchasable<wbr>Traits<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a>, previouslySelected<span class="tsd-signature-symbol">?: </span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_traits_.traits.loadable.html">Loadable</a>.<a href="../interfaces/_traits_.traits.loadable.html#load">load</a></p>
 								<ul>
-									<li>Defined in Traits.ts:57</li>
+									<li>Defined in Traits.ts:164</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Finds items that either have no requirements or the requirements have been met in another (optional tree)</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>input: <span class="tsd-signature-type">any</span></h5>
+									<h5>source: <a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> previouslySelected: <a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -255,45 +178,27 @@
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="_traits_.traits.cumulativeeffect.html" class="tsd-kind-icon">Cumulative<wbr>Effect</a>
 					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_traits_.traits.trait.html" class="tsd-kind-icon">Trait</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="_traits_.traits.traitnode.html" class="tsd-kind-icon">Trait<wbr>Node</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_traits_.traits.trait.html" class="tsd-kind-icon">Trait</a>
+						<a href="_traits_.traits.traitnodecomparator.html" class="tsd-kind-icon">Trait<wbr>Node<wbr>Comparator</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#cost" class="tsd-kind-icon">cost</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#effects" class="tsd-kind-icon">effects</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#replacesid" class="tsd-kind-icon">replaces<wbr>Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#requiresid" class="tsd-kind-icon">requires<wbr>Id</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_traits_.traits.traitnodecomparator.html#flatten" class="tsd-kind-icon">flatten</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_traits_.traits.trait.html#load" class="tsd-kind-icon">load</a>
+								<a href="_traits_.traits.traitnodecomparator.html#getpurchasabletraits" class="tsd-kind-icon">get<wbr>Purchasable<wbr>Traits</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_traits_.traits.traitnode.html" class="tsd-kind-icon">Trait<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_traits_.traits.traitnodecomparator.html" class="tsd-kind-icon">Trait<wbr>Node<wbr>Comparator</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../interfaces/_traits_.traits.loadable.html" class="tsd-kind-icon">Loadable</a>
 					</li>

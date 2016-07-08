@@ -71,6 +71,11 @@ module Traits {
         }
     }
 
+
+    interface TraitNodeTraversalAction {
+        (node:TraitNode):boolean;
+    }
+
     /**
      * Represents the trait tree.
      */
@@ -87,22 +92,46 @@ module Traits {
          * Returns null if none found.
          */
         findById(id:string, children?:Array<TraitNode>):TraitNode {
-            // allow passing of standalone children for easy searching
-            var searchChildren = children || this.children;
-            if(this.node.id == id) {
-                return this;
+            let result:TraitNode = null;
+            this.depthFirst(
+                function(node:TraitNode):boolean {
+                    if(node.node.id == id) {
+                        result = node;
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            return result;
+        }
+
+        /**
+         * Do a depth search travelersal of the tree performing the 
+         * action for each node (including the root). If the action returns "true"
+         * then the execution will stop.
+         * Returns true if condition is action returns true, false otherwise.
+         */
+        depthFirst(action:TraitNodeTraversalAction, node?:TraitNode):boolean {
+            let root = node || this;
+            let rootResult = action(root);
+
+            if(rootResult) {
+                return true;
             }
-            for(let c of searchChildren) {
-                let result = c.findById(id);
-                if(result != null) {
-                    return result;
+
+            for(let c of root.children) {
+                let result = this.depthFirst(action, c);
+                if(result) {
+                    return true;
                 }
             }
-            return null;
+
+            return false;
         }
+
         load(input:any):void {
             // TODO: Validation? dupe / missing dependencies?
-            let children = new Array<TraitNode>();
+            this.children = new Array<TraitNode>();
             if(input.traits) {
                 let traits = new Array<Trait>();
                 for (let inputTrait of input.traits) {
@@ -113,20 +142,43 @@ module Traits {
                     traitNode.node = trait;
 
                     if(traitNode.node.requiresId == null) {
-                        children.push(traitNode);
+                        this.children.push(traitNode);
                     } else {
-                        let parentNode = this.findById(traitNode.node.requiresId, children);
+                        let parentNode = this.findById(traitNode.node.requiresId);
                         if(parentNode == null) {
-                            throw "parentNode not found";
+                            throw "parentNode not found for id:" + traitNode.node.requiresId;
                         }
                         parentNode.children.push(traitNode);
                     }
                 }
             }
-            this.children = children;
         }
     }
 
-    // need a method that takes two trait nodes and ...
-    // finds items taht are selectable
+    /**
+     * Compares TraitNode to each other
+     */
+    export class TraitNodeComparator {
+        /**
+         * Finds items that either have no requirements or the requirements have been met in another (optional tree)
+         */
+        getPurchasableTraits(source:TraitNode,previouslySelected?:TraitNode):Array<TraitNode> {
+            let selected = previouslySelected || new TraitNode();
+            let result = new Array<TraitNode>();
+            // assuming that the trees do NOT have a similar structure
+
+            // flatten each tree
+            // loop through (oh no! n*n) and find all in source that have no requirements
+
+            return result;
+        }
+
+        /**
+         * Turn a tree into an area, depth first
+         */
+        flatten(source:TraitNode):Array<TraitNode> {
+            let result = new Array<TraitNode>();
+            return result;
+        }
+    }
 }

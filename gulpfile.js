@@ -29,7 +29,7 @@ gulp.task("test", ['default'], function () {
       .pipe(jasmine())
 });
 
-gulp.task("doc", function() {
+gulp.task("doc", ['default'], function() {
     return gulp
         .src(["src/**/*.ts"])
         .pipe(typedoc({
