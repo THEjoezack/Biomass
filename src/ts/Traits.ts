@@ -9,6 +9,11 @@ module Traits {
         damage:string;
         damagetype:string;
         on:string;
+        constructor(input?:any) {
+            if(input != null) {
+                this.load(input);
+            }
+        }
         load(input:any):void {
             this.description = input.description;
             this.percentage = input.percentage;
@@ -25,8 +30,12 @@ module Traits {
         effects: Array<CumulativeEffect>;
         replacesId: string;
         requiresId: string;
-        constructor() {
-            this.effects = new Array<CumulativeEffect>();
+        constructor(input?:any) {
+            if(input != null) {
+                this.load(input);
+            } else {
+                this.effects = new Array<CumulativeEffect>();
+            }
         }
         load(input:any):void {
             this.id = input.id;
@@ -34,31 +43,33 @@ module Traits {
             this.cost = input.cost;
             this.replacesId = input.replacesId;
             this.requiresId = input.requiresId;
-            if(input.effects) {
-                let effects = new Array<CumulativeEffect>();
+            let effects = new Array<CumulativeEffect>();
+            if(input.effects != null) {
                 for (let inputEffect of input.effects) {
-                    let effect = new CumulativeEffect();
-                    effect.load(inputEffect);
+                    let effect = new CumulativeEffect(inputEffect);
                     effects.push(effect);
                 }
-                this.effects = effects;
             }
+            this.effects = effects;
         }
     }
 
     export class TraitNode implements Loadable {
         node: Trait;
         children: Array<TraitNode>;
-        constructor() {
-            this.node = new Trait();
-            this.children = new Array<TraitNode>();
+        constructor(node?:Trait,children?:Array<TraitNode>) {
+            this.node = node || new Trait();
+            this.children = children || new Array<TraitNode>();
         }
+        
         // depth first search..though a breadth is probably better?
-        findById(id:string):TraitNode {
+       findById(id:string, children?:Array<TraitNode>):TraitNode {
+            // allow passing of standalone children for easy searching
+            var searchChildren = children || this.children;
             if(this.node.id == id) {
                 return this;
             }
-            for(let c of this.children) {
+            for(let c of searchChildren) {
                 let result = c.findById(id);
                 if(result != null) {
                     return result;
@@ -80,10 +91,12 @@ module Traits {
 
                     if(traitNode.node.requiresId == null) {
                         children.push(traitNode);
-                    }
-                    else {
-                        let parentNode = findById(traitNode.node.requiresId);
-                        parentNode.children.push(parentNode);
+                    } else {
+                        let parentNode = this.findById(traitNode.node.requiresId, children);
+                        if(parentNode == null) {
+                            throw "parentNode not found";
+                        }
+                        parentNode.children.push(traitNode);
                     }
                 }
             }
