@@ -4,6 +4,8 @@ var bower = require('gulp-bower');
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
 var jasmine = require('gulp-jasmine');
+var typedoc = require("gulp-typedoc");
+
 
 gulp.task('bower', function() {
   return bower();
@@ -27,3 +29,12 @@ gulp.task("test", ['default'], function () {
       .pipe(jasmine())
 });
 
+gulp.task("doc", function() {
+    return gulp
+        .src(["src/**/*.ts"])
+        .pipe(typedoc({
+            out: "docs/",
+            name: "Biomass"
+        }))
+    ;
+});

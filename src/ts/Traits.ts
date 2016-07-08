@@ -1,8 +1,21 @@
+/**
+ * The trait module defines classes related to abilities that the
+ * characters can acquire to enhance or add new abilities. 
+ */
 module Traits {
+    /**
+     * Simple interface that classes can implement to "hydrate"
+     * themselves from json.
+     */
     interface Loadable {
         load(input:any):void;
     }
 
+    /**
+     * Represents abilities that can be added together to enhance
+     * character abilities.
+     * TODO: Might need to move somewhere better?
+     */
     export class CumulativeEffect implements Loadable {
         description:string;
         percentage:number;
@@ -23,6 +36,10 @@ module Traits {
         }
     }
 
+    /**
+     * Traits represent passive or active abilities that can be
+     * acquired by a character.
+     */
     export class Trait implements Loadable {
         id: string;
         name: string;
@@ -54,6 +71,9 @@ module Traits {
         }
     }
 
+    /**
+     * Represents the trait tree.
+     */
     export class TraitNode implements Loadable {
         node: Trait;
         children: Array<TraitNode>;
@@ -62,8 +82,11 @@ module Traits {
             this.children = children || new Array<TraitNode>();
         }
         
-        // depth first search..though a breadth is probably better?
-       findById(id:string, children?:Array<TraitNode>):TraitNode {
+        /**
+         * Returns (the first, though there shouldn't be duplicates) TraitNode for a given id.
+         * Returns null if none found.
+         */
+        findById(id:string, children?:Array<TraitNode>):TraitNode {
             // allow passing of standalone children for easy searching
             var searchChildren = children || this.children;
             if(this.node.id == id) {
@@ -103,4 +126,7 @@ module Traits {
             this.children = children;
         }
     }
+
+    // need a method that takes two trait nodes and ...
+    // finds items taht are selectable
 }
