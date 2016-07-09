@@ -71,7 +71,9 @@ module Traits {
         }
     }
 
-
+    /**
+     * Simple interface that allows for strongly typed closures for traversals
+     */
     interface TraitNodeTraversalAction {
         (node:TraitNode):boolean;
     }
@@ -108,7 +110,7 @@ module Traits {
         /**
          * Turn a tree into an array, depth first
          */
-        flatten(source:TraitNode):Array<TraitNode> {
+        flatten():Array<TraitNode> {
             let result = new Array<TraitNode>();
             this.traverse(
                 function(node:TraitNode):boolean {
@@ -181,10 +183,28 @@ module Traits {
         getPurchasableTraits(source:TraitNode,previouslySelected?:TraitNode):Array<TraitNode> {
             let selected = previouslySelected || new TraitNode();
             let result = new Array<TraitNode>();
-            // assuming that the trees do NOT have a similar structure
 
-            // flatten each tree
-            // loop through (oh no! n*n) and find all in source that have no requirements
+            // flatten the source
+            let flattenedSource = source.flatten();
+
+            // loop through and look for items that are NOT already selected
+            // and either have no requirements, or have their requirements fulfilled
+            for(var i = 0; i < flattenedSource.length; i++) {
+                let sourceNode = flattenedSource[i];
+                let sourceTrait = sourceNode.node;
+                let sourceId = sourceTrait.id;
+                let selectedNode = selected.findById(sourceId);
+
+                if(selectedNode) {
+                    // trait has already been selected
+                    // do nothing
+                } else if (sourceTrait.requiresId == null) {
+                    // has no requirements, automatically available
+                    result.push(sourceNode);
+                } else if(selected.findById(sourceTrait.requiresId)) {
+                    result.push(sourceNode);
+                }
+            }
 
             return result;
         }

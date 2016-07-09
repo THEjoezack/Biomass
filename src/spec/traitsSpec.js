@@ -32,6 +32,66 @@ describe("A cumulative effect", function() {
     });
 });
 
+describe("A trait node comparator", function() {
+    var sourceList = {
+        "traits": [
+            {
+                "id": "topLevelWithChildren"
+            },
+            {
+                "id": "children",
+                "requiresId": "topLevelWithChildren"
+            },
+            {
+                "id": "topLevelNoChildren"
+            }
+        ]
+    };
+    it("finds traits that have no requirements", function() {
+        var target = new Traits.TraitNodeComparator();
+        
+        var source = new Traits.TraitNode();
+        source.load(sourceList);
+
+        var actual = target.getPurchasableTraits(source);
+        expect(actual.length).toEqual(2); // not great tests...
+    });
+
+    it("finds no traits when all have been selected", function() {
+        var target = new Traits.TraitNodeComparator();
+        
+        var source = new Traits.TraitNode();
+        source.load(sourceList);
+
+        var actual = target.getPurchasableTraits(source,source);
+        expect(actual.length).toEqual(0); // not great tests...
+    });
+
+    it("finds traits whose requirements have been fulfilled", function() {
+        var source = new Traits.TraitNode();
+        source.load(sourceList);
+
+        var selected = new Traits.TraitNode();
+        selected.load({
+            "traits": [
+                {
+                    "id": "topLevelWithChildren"
+                },
+                {
+                    "id": "topLevelNoChildren"
+                }
+            ]
+        });
+        
+        var target = new Traits.TraitNodeComparator();
+        var actual = target.getPurchasableTraits(source,selected);
+        expect(actual.length).toEqual(1); // not great tests...
+        expect(actual[0].node.id).toEqual("children");
+    });
+    
+});
+
+
 describe("A trait node", function() {
 
     var sampleInput = {
