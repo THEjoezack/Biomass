@@ -596,8 +596,9 @@ Game.EntityMixins.ExperienceGainer = {
         this._experience = template['experience'] || 0;
         this._statPointsPerLevel = template['statPointsPerLevel'] || 1;
         this._statPoints = 0;
-        // Determine what stats can be levelled up.
+        // Determine what stats can be leveled up.
         this._statOptions = [];
+        this._selectedTraits = new Traits.TraitNode();
         if (this.hasMixin('Attacker')) {
             this._statOptions.push(['Increase attack value', this.increaseAttackValue]);
         }
@@ -626,6 +627,9 @@ Game.EntityMixins.ExperienceGainer = {
     },
     getStatOptions: function() {
         return this._statOptions;
+    },
+    getSelectedTraits: function() {
+        return this._selectedTraits;
     },
     giveExperience: function(points) {
         var statPointsGained = 0;

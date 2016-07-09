@@ -25,12 +25,12 @@ https://github.com/jokeofweek/jsrogue/
 
 ### Up next...
 * Traits!
-  * Figure out which traits are selectable, given a tree
-  * Traits should "add" in additional stats
+  * -Load from file-
+  * -Figure out which traits are selectable, given a tree-
   * Show trait screen
-    * Load traits from file
-  * Character screen should show traits / basic info
-  * Allow player to spend xp on traits
+    * -Load traits from file-
+    * Allow player to spend xp on traits
+    * Traits should "add" in additional stats
   * "Digging" should be a trait!
     
 ### Goals

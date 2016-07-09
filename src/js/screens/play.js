@@ -149,6 +149,10 @@ Game.Screen.playScreen = {
                 this.move(0, -1, 0);
             } else if (inputData.keyCode === ROT.VK_DOWN) {
                 this.move(0, 1, 0);
+            } else if (inputData.keyCode === ROT.VK_T) {
+                // Show the trait screen
+                this.showEntitySubScreen(Game.Screen.traitScreen, this._player);
+                return;
             } else if (inputData.keyCode === ROT.VK_I) {
                 // Show the inventory screen
                 this.showItemsSubScreen(Game.Screen.inventoryScreen, this._player.getItems(),
@@ -241,6 +245,10 @@ Game.Screen.playScreen = {
         this._subScreen = subScreen;
         // Refresh screen on changing the subscreen
         Game.refresh();
+    },
+    showEntitySubScreen: function(subScreen, player) {
+        subScreen.setup(player);
+        this.setSubScreen(subScreen);
     },
     showItemsSubScreen: function(subScreen, items, emptyMessage) {
         if (items && subScreen.setup(this._player, items) > 0) {
