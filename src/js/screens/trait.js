@@ -7,7 +7,6 @@ Game.Screen.traitScreen = {
     render: function(display) {
         var letters = 'abcdefghijklmnopqrstuvwxyz';
         display.drawText(0, 0, 'Choose a trait to purchase: ');
-        console.log(this._entity);
         var selectedTraits = this._entity.getSelectedTraits();
 
         var comparator = new Traits.TraitNodeComparator();

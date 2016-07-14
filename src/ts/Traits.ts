@@ -217,13 +217,11 @@ module Traits {
          * Finds items that either have no requirements or the requirements have been met in another (optional tree)
          */
         getPurchasableTraits(source:TraitNode,previouslySelected?:TraitNode):Array<TraitNode> {
-            console.log('getPurchasableTraits');
             let selected = previouslySelected || new TraitNode();
             let result = new Array<TraitNode>();
 
             // flatten the source
             let flattenedSource = source.flatten();
-            console.log('flattenedSource.length: ' + flattenedSource.length);
 
             // loop through and look for items that are NOT already selected
             // and either have no requirements, or have their requirements fulfilled
@@ -233,22 +231,16 @@ module Traits {
                 let sourceId = sourceTrait.id;
                 let selectedNode = selected.findById(sourceId);
 
-                console.log('sourceId: ' + sourceId);
-
                 if(selectedNode) {
-                    console.log('trait has already been selected');
                     // trait has already been selected
                     // do nothing
                 } else if (sourceTrait.requiresId == null) {
-                    console.log('has no requirements, automatically available');
                     // has no requirements, automatically available
                     result.push(sourceNode);
                 } else if(selected.findById(sourceTrait.requiresId)) {
-                    console.log('found requirement');
                     result.push(sourceNode);
                 } else {
                     // no match!
-                    console.log('no match');
                 }
             }
 
