@@ -19,6 +19,8 @@ module Traits {
     export class CumulativeEffect implements Loadable {
         description:string;
         percentage:number;
+        defense:string;
+        defensetype:string;
         damage:string;
         damagetype:string;
         on:string;
@@ -30,6 +32,8 @@ module Traits {
         load(input:any):void {
             this.description = input.description;
             this.percentage = input.percentage;
+            this.defense = input.defense;
+            this.defensetype = input.defensetype;
             this.damage = input.damage;
             this.damagetype = input.damagetype;
             this.on = input.on;
@@ -90,6 +94,38 @@ module Traits {
         }
         
         /**
+         * Clones node, ignoring children
+         * Returns true if the node was added.
+         */
+        shallowCopy():TraitNode {
+            var clone = new Trait();
+            clone.load(this.node);
+            
+            var root = new TraitNode();
+            root.node = clone;
+            return root;
+        }
+
+        /**
+         * Add a node to the appropriate spot in the hierarchy, assuming the requiresId is met.
+         * Returns true if the node was added.
+         */
+        add(child:TraitNode):boolean {
+            let itemAdded = false;
+            this.traverse(
+                function(node:TraitNode):boolean {
+                    if(child.node.requiresId == null || node.node.id == child.node.requiresId) {
+                        node.children.push(child);
+                        itemAdded = true;
+                        return true;
+                    }
+                    return false;
+                }
+            );
+            return itemAdded;
+        }
+
+        /**
          * Returns (the first, though there shouldn't be duplicates) TraitNode for a given id.
          * Returns null if none found.
          */
@@ -108,7 +144,7 @@ module Traits {
         }
 
         /**
-         * Turn a tree into an array, depth first
+         * Turn a tree into an array, depth first. Returns a clone
          */
         flatten():Array<TraitNode> {
             let result = new Array<TraitNode>();
@@ -181,11 +217,13 @@ module Traits {
          * Finds items that either have no requirements or the requirements have been met in another (optional tree)
          */
         getPurchasableTraits(source:TraitNode,previouslySelected?:TraitNode):Array<TraitNode> {
+            console.log('getPurchasableTraits');
             let selected = previouslySelected || new TraitNode();
             let result = new Array<TraitNode>();
 
             // flatten the source
             let flattenedSource = source.flatten();
+            console.log('flattenedSource.length: ' + flattenedSource.length);
 
             // loop through and look for items that are NOT already selected
             // and either have no requirements, or have their requirements fulfilled
@@ -195,14 +233,22 @@ module Traits {
                 let sourceId = sourceTrait.id;
                 let selectedNode = selected.findById(sourceId);
 
+                console.log('sourceId: ' + sourceId);
+
                 if(selectedNode) {
+                    console.log('trait has already been selected');
                     // trait has already been selected
                     // do nothing
                 } else if (sourceTrait.requiresId == null) {
+                    console.log('has no requirements, automatically available');
                     // has no requirements, automatically available
                     result.push(sourceNode);
                 } else if(selected.findById(sourceTrait.requiresId)) {
+                    console.log('found requirement');
                     result.push(sourceNode);
+                } else {
+                    // no match!
+                    console.log('no match');
                 }
             }
 

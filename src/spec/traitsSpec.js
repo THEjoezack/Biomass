@@ -47,6 +47,7 @@ describe("A trait node comparator", function() {
             }
         ]
     };
+
     it("finds traits that have no requirements", function() {
         var target = new Traits.TraitNodeComparator();
         
@@ -112,6 +113,34 @@ describe("A trait node", function() {
     it("has children initialized by default", function() {
         var target = new Traits.TraitNode();
         expect(target.children).toEqual([]);
+    });
+
+    it("can add a child with no dependecies", function() {
+        var target = new Traits.TraitNode();
+        var child = new Traits.TraitNode();
+        var result = target.add(child);
+        expect(result).toBe(true);
+        expect(target.children.length).toEqual(1);
+    });
+
+    it("can add a child to it's hierachy", function() {
+        var target = new Traits.TraitNode();
+        target.load(sampleInput);        
+        var child = new Traits.TraitNode({ id: 'newNode', requiresId: 'children' });
+        var result = target.add(child);
+        expect(result).toBe(true);
+        expect(target.findById('newNode')).not.toBe(null);
+    });
+
+    it("can shallow copy itself (no children)", function() {
+        var target = new Traits.TraitNode();
+        target.load(sampleInput);        
+        var clone = target.shallowCopy();
+        expect(target.children.length).toBe(2);
+        expect(clone.children.length).toBe(0);
+        expect(clone.node.id).toBe(target.node.id);
+        clone.node.id = "changed";
+        expect(clone.node.id).not.toBe(target.node.id);
     });
 
     it("can traverse itself (depth first) and perform an action", function() {

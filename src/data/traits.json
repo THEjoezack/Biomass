@@ -8,7 +8,7 @@
                 {
                     "description": "{0} chance to do {1} damage on {2}",
                     "percentage": 10,
-                    "damage": "1d2",
+                    "damage": "10",
                     "damagetype": "physical",
                     "on": "attack"
                 }
@@ -22,7 +22,7 @@
                 {
                     "description": "{0} chance to do {1} damage on {2}",
                     "percentage": 15,
-                    "damage": "1d3",
+                    "damage": "20",
                     "damagetype": "physical",
                     "on": "attack"
                 }
@@ -33,13 +33,13 @@
         {
             "id": "thickskin",
             "name": "thick skin",
-            "cost": 10,
+            "cost": 12,
             "effects": [
                 {
                     "description": "+{0} defense",
-                    "defense": "1",
+                    "defense": "10",
                     "defensetype": "physical",
-                    "on": "attack"
+                    "on": "defend"
                 }
             ]
         }

@@ -12,7 +12,8 @@ Game.PlayerTemplate = {
              Game.EntityMixins.InventoryHolder, Game.EntityMixins.FoodConsumer,
              Game.EntityMixins.Sight, Game.EntityMixins.MessageRecipient,
              Game.EntityMixins.Equipper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.PlayerStatGainer]
+             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.PlayerStatGainer,
+             Game.EntityMixins.TraitGainer]
 };
 
 // Create our central entity repository

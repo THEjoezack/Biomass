@@ -29,10 +29,16 @@ https://github.com/jokeofweek/jsrogue/
   * -Figure out which traits are selectable, given a tree-
   * Show trait screen
     * -Load traits from file-
+    * -Traits should "add" in additional stats-
     * Allow player to spend xp on traits
-    * Traits should "add" in additional stats
+    * Buying trait shouldn't close the subscreen
+  * view traits on character screen
+  * Replacements should actually replace!
+  * dice or numeric style modifications
   * "Digging" should be a trait!
-    
+  * Add percentages
+  * Damage types
+
 ### Goals
 * Have fun
 * Learn TypeScript!

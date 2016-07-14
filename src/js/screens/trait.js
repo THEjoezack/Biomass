@@ -22,6 +22,14 @@ Game.Screen.traitScreen = {
             );
         }
 
+        if(!this._options.length) {
+            display.drawText(
+                0,
+                2, 
+                'Nothing left to get!'
+            );
+        }
+
         // Render remaining stat points
         display.drawText(0, 4 + this._options.length,
             "Biomass: " + this._entity.getExperience());
@@ -35,16 +43,11 @@ Game.Screen.traitScreen = {
                 var index = inputData.keyCode - ROT.VK_A;
                 if (this._options[index]) {
                     // TODO check if the player can afford it
-                    // Call the stat increasing function
-                    this._options[index][1].call(this._entity);
-                    // Decrease stat points
-                    this._entity.setStatPoints(this._entity.getStatPoints() - 1);
-                    // If we have no stat points left, exit the screen, else refresh
-                    if (this._entity.getStatPoints() == 0) {
-                        Game.Screen.playScreen.setSubScreen(undefined);
-                    } else {
-                        Game.refresh();
-                    }
+                    // TODO show description
+                    this._entity.addTrait(this._options[index]);
+                    // TODO decrease biomass
+                    // TODO why does refresh leave?
+                    Game.refresh();
                 }
             }
 
