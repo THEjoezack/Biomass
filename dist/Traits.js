@@ -9,10 +9,11 @@ var Traits;
         CumulativeEffect.prototype.load = function (input) {
             this.description = input.description;
             this.percentage = input.percentage;
+            this.maxHp = input.maxHp;
             this.defense = input.defense;
-            this.defensetype = input.defensetype;
+            this.defenseType = input.defenseType;
             this.damage = input.damage;
-            this.damagetype = input.damagetype;
+            this.damageType = input.damageType;
             this.on = input.on;
         };
         return CumulativeEffect;
