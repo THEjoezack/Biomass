@@ -41,11 +41,23 @@ Game.Screen.playScreen = {
             );
         }
         // Render player stats
-        var stats = '%c{white}%b{black}';
-        stats += vsprintf('HP: %d/%d L: %d XP: %d', 
-            [this._player.getHp(), this._player.getMaxHp(),
-             this._player.getLevel(), this._player.getExperience()]);
-        display.drawText(0, screenHeight, stats);
+        display.drawText(0, screenHeight - 1, vsprintf(
+                '%sHealth:  %d/%d', 
+                [
+                    '%c{white}%b{black}',
+                    this._player.getHp(),
+                    this._player.getMaxHp()
+                ]
+            )
+        );
+        display.drawText(0, screenHeight, vsprintf(
+                '%sBiomass: %d', 
+                [
+                    '%c{white}%b{black}',
+                    this._player.getExperience()
+                ]
+            )
+        );
         // Render hunger state
         var hungerState = this._player.getHungerState();
         display.drawText(screenWidth - hungerState.length, screenHeight, hungerState);

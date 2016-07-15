@@ -30,14 +30,16 @@ https://github.com/jokeofweek/jsrogue/
   * Show trait screen
     * -Load traits from file-
     * -Traits should "add" in additional stats-
-    * Allow player to spend xp on traits
+    * Allow player to spend biomass on traits
     * Buying trait shouldn't close the subscreen
-  * view traits on character screen
+    * Show that TraitGainer has a dependency on ExperienceGainer
+  * View traits on character screen
   * Replacements should actually replace!
-  * dice or numeric style modifications
+  * Dice or numeric style modifications
   * "Digging" should be a trait!
   * Add percentages
   * Damage types
+* UI Improvements
 
 ### Goals
 * Have fun

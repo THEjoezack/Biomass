@@ -4,15 +4,14 @@ Game.Screen.startScreen = {
     exit: function() { console.log("Exited start screen."); },
     render: function(display) {
         // Render our prompt to the screen
-        display.drawText(1,1, "%c{yellow}Javascript Roguelike");
-        display.drawText(1,2, "Press [Enter] to start!");
+        display.drawText(1,1, "%c{yellow}Rogue Biomass!");
+        display.drawText(1,2, "A fork of jsrogue, using Rot.js!");
+        display.drawText(1,4, "Press any key to start");
     },
     handleInput: function(inputType, inputData) {
         // When [Enter] is pressed, go to the play screen
         if (inputType === 'keydown') {
-            if (inputData.keyCode === ROT.VK_RETURN) {
-                Game.switchScreen(Game.Screen.playScreen);
-            }
+            Game.switchScreen(Game.Screen.playScreen);
         }
     }
 };
