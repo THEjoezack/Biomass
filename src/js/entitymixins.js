@@ -600,10 +600,38 @@ Game.EntityMixins.TraitGainer = {
     init: function(template) {
         this._selectedTraits = new Traits.TraitNode();
     },
-    addTrait: function(traitNode) {
+    addTrait: function(entity, traitNode) {
         var selected = this.getSelectedTraits();
         var clone = traitNode.shallowCopy();
+        var trait = clone.node;
+
+        if(this.hasMixin(Game.EntityMixins.ExperienceGainer)) {
+            var cost = trait.cost;
+            var deficit = cost - entity.getExperience();
+            if(deficit <= 0) {
+                entity.spendExperience(cost);
+            } else {
+                // TODO better alerting!
+                var message = vsprintf("You can't afford %s yet, you need %d more biomass.", [ trait.name, deficit]);
+                Game.sendMessage(this, message);
+                return;
+            }
+        }
+
         selected.add(clone);
+
+        // TODO this is pretty specific...
+        if(this.hasMixin(Game.EntityMixins.Destructible) && trait.effects.length) {
+            for(var i = 0; i < trait.effects.length; i++) {
+                // attack/defense will be modified at the appropriate time
+                // hp needs to happen now
+                var effect = trait.effects[i];
+                var maxHp = parseInt(effect.maxHp);
+                if(maxHp) {
+                    entity.increaseMaxHp(maxHp);
+                }
+            }
+        }
     },
     setSelectedTraits: function(selectedTraits) {
         this._selectedTraits = selectedTraits;
@@ -683,6 +711,10 @@ Game.EntityMixins.ExperienceGainer = {
     },
     getStatOptions: function() {
         return this._statOptions;
+    },
+    spendExperience: function(points) {
+        // doesn't effect level
+        this._experience -= points;
     },
     giveExperience: function(points) {
         var statPointsGained = 0;
