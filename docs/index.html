@@ -65,17 +65,12 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p>mkdir RogueOS;
-					cd RogueOS;
-					npm init
-					npm install --save rot-js
-				npm install --save-dev gulp</p>
-				<p>// Gulp Dependencies
-				var gulp = require(&#39;gulp&#39;);</p>
-				<p>Based on...
+				<p>Simple roguelike expiriment to gain some experience (namely TypeScript) and have a little fun along the way.</p>
+				<p>Standing on the shoulders of greatness:
 					<a href="https://github.com/ondras/rot.js">https://github.com/ondras/rot.js</a>
 				<a href="https://github.com/jokeofweek/jsrogue/">https://github.com/jokeofweek/jsrogue/</a></p>
-				<h2 id="getting-started">Getting started</h2>
+				<p>Play me here: <a href="https://thejoezack.github.io/Biomass/">https://thejoezack.github.io/Biomass/</a></p>
+				<h2 id="get-started-developing">Get Started developing</h2>
 				<ul>
 					<li>npm cache clean #(if you run into anything weird)</li>
 					<li>npm install gulp #(if you don&#39;t have it already)</li>
@@ -85,30 +80,47 @@
 					<li>gulp test</li>
 					<li>npm install -g http-server</li>
 					<li>http-server</li>
+					<li>go to <a href="http://localhost:8080">http://localhost:8080</a></li>
 				</ul>
-				<h2 id="todo">TODO</h2>
-				<h3 id="up-next-">Up next...</h3>
+				<h2 id="active-deveopment">Active deveopment</h2>
+				<p>Developing a tree based passive trait system that will allow the player to purchase and upgrade traits using the xp (&quot;biomass&quot;) they accumulate.</p>
+				<p>Only have place holder data in place, and there&#39;s still quite a bit to do.</p>
+				<p>Attempting to keep a focused listof</p>
 				<ul>
-					<li>Traits!<ul>
+					<li>Evolution theming (ongoing)</li>
+					<li>Basic UI/UX improvements (ongoing)</li>
+					<li>Passive Trait System<ul>
 							<li>-Load from file-</li>
-							<li>-Figure out which traits are selectable, given a tree-</li>
-							<li>Show trait screen<ul>
-									<li>-Load traits from file-</li>
-									<li>-Traits should &quot;add&quot; in additional stats-</li>
-									<li>Allow player to spend biomass on traits</li>
-									<li>Buying trait shouldn&#39;t close the subscreen</li>
-									<li>Show that TraitGainer has a dependency on ExperienceGainer</li>
+							<li>-Figure out which traits are selectable, given a tree-<ul>
+									<li>Trait screen<ul>
+											<li>-Load traits from file-</li>
+											<li>-Traits should &quot;add&quot; in additional stats-</li>
+											<li>Allow player to spend biomass on traits</li>
+											<li>Buying trait should refresh the subscreen instead of closing</li>
+											<li>Show that TraitGainer has a dependency on ExperienceGainer?</li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 							<li>View traits on character screen</li>
-							<li>Replacements should actually replace!</li>
+							<li>Replacements should actually replace</li>
+							<li>Mutually Exclusive traits</li>
 							<li>Dice or numeric style modifications</li>
-							<li>&quot;Digging&quot; should be a trait!</li>
-							<li>Add percentages</li>
-							<li>Damage types</li>
+							<li>Player should be alerted when they can afford a trait</li>
+							<li>Types of traits<ul>
+									<li>-Passive Attack-</li>
+									<li>-Passive Defense-</li>
+									<li>Passive MaxHP</li>
+									<li>Passive Regeneration</li>
+									<li>Passive Speed</li>
+									<li>Digging</li>
+									<li>Conditional bonus?</li>
+									<li>Active abilities?</li>
+									<li>Different Damage/Resistant types </li>
+								</ul>
+							</li>
 						</ul>
 					</li>
-					<li>UI Improvements</li>
 				</ul>
 				<h3 id="goals">Goals</h3>
 				<ul>
@@ -122,12 +134,13 @@
 				</ul>
 				<h2 id="nice-to-haves-that-i-care-about">Nice to haves that I care about</h2>
 				<ul>
-					<li>Skill tree like evolution system!</li>
-					<li>Unlocks</li>
+					<li>passive trait evolution system! (in progress)</li>
+					<li>a game should last no longer than 30 minutes</li>
+					<li>tiles!</li>
+					<li>unlock system </li>
 					<li>autopickup some items</li>
 					<li>good targetting</li>
 					<li>Not too many items</li>
-					<li>Game should be over in an hour</li>
 				</ul>
 			</div>
 		</div>

@@ -9,8 +9,8 @@
                     "description": "{0} chance to do {1} damage on {2}",
                     "percentage": 10,
                     "damage": "10",
-                    "damagetype": "physical",
-                    "on": "attack"
+                    "damageType": "physical",
+                    "on": "passive"
                 }
             ]
         },
@@ -23,8 +23,8 @@
                     "description": "{0} chance to do {1} damage on {2}",
                     "percentage": 15,
                     "damage": "20",
-                    "damagetype": "physical",
-                    "on": "attack"
+                    "damageType": "physical",
+                    "on": "passive"
                 }
             ],
             "replacesId": "horns",
@@ -38,8 +38,35 @@
                 {
                     "description": "+{0} defense",
                     "defense": "10",
-                    "defensetype": "physical",
-                    "on": "defend"
+                    "defenseType": "physical",
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "blubber",
+            "name": "blubber",
+            "cost": 20,
+            "requiresId": "thickskin",
+            "effects": [
+                {
+                    "description": "+{0} hp",
+                    "maxHp": "15",
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "scales",
+            "name": "scales",
+            "cost": 20,
+            "requiresId": "thickskin",
+            "effects": [
+                {
+                    "description": "+{0} defense",
+                    "defense": "10",
+                    "defenseType": "physical",
+                    "on": "passive"
                 }
             ]
         }

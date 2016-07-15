@@ -43,7 +43,7 @@ Game.Screen.traitScreen = {
                 if (this._options[index]) {
                     // TODO check if the player can afford it
                     // TODO show description
-                    this._entity.addTrait(this._options[index]);
+                    this._entity.addTrait(this._entity, this._options[index]);
                     // TODO decrease biomass
                     // TODO why does refresh leave?
                     Game.refresh();

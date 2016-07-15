@@ -32,16 +32,24 @@ Attempting to keep a focused listof
     * Trait screen
       * -Load traits from file-
       * -Traits should "add" in additional stats-
-      * Allow player to spend biomass on traits
-      * Buying trait shouldn't close the subscreen
-      * Show that TraitGainer has a dependency on ExperienceGainer
+      * -Allow player to spend biomass on traits-
+      * Need to show descriptions of selectable items
+      * Buying trait should refresh the subscreen instead of closing
   * View traits on character screen
-  * Replacements should actually replace!
+  * Replacements should actually replace
+  * Mutually Exclusive traits
   * Dice or numeric style modifications
-  * "Digging" should be a trait!
-  * Optional items (will probably get punted)
-    * Add percentage to act
-    * Different Damage/Resistant types
+  * Player should be alerted when they can afford a trait
+  * Types of traits
+   * -Passive Attack-
+   * -Passive Defense-
+   * -Passive MaxHP-
+   * Digging
+   * Passive Speed
+   * Passive Regeneration
+   * Conditional bonus?
+   * Active abilities?
+   * Different Damage/Resistant types 
 
 ### Goals
 * Have fun

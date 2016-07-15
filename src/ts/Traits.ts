@@ -19,10 +19,11 @@ module Traits {
     export class CumulativeEffect implements Loadable {
         description:string;
         percentage:number;
+        maxHp:string;
         defense:string;
-        defensetype:string;
+        defenseType:string;
         damage:string;
-        damagetype:string;
+        damageType:string;
         on:string;
         constructor(input?:any) {
             if(input != null) {
@@ -32,10 +33,11 @@ module Traits {
         load(input:any):void {
             this.description = input.description;
             this.percentage = input.percentage;
+            this.maxHp = input.maxHp;
             this.defense = input.defense;
-            this.defensetype = input.defensetype;
+            this.defenseType = input.defenseType;
             this.damage = input.damage;
-            this.damagetype = input.damagetype;
+            this.damageType = input.damageType;
             this.on = input.on;
         }
     }
