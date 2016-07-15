@@ -39,8 +39,9 @@ Attempting to keep a focused listof
   * Replacements should actually replace!
   * Dice or numeric style modifications
   * "Digging" should be a trait!
-  * Add percentage to act
-  * Different Damage/Resistant types
+  * Optional items (will probably get punted)
+    * Add percentage to act
+    * Different Damage/Resistant types
 
 ### Goals
 * Have fun
@@ -51,9 +52,10 @@ Attempting to keep a focused listof
 * Use "biomass" as singular currency to level up, evolve, heal, buff items
 
 ## Nice to haves that I care about
-* Skill tree like evolution system!
-* Unlocks
+* passive trait evolution system! (in progress)
+* a game should last no longer than 30 minutes
+* tiles!
+* unlock system 
 * autopickup some items
 * good targetting
 * Not too many items
-* Game should be over in an hour
