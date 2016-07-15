@@ -6,6 +6,12 @@ https://github.com/jokeofweek/jsrogue/
 
 Play me here: https://thejoezack.github.io/Biomass/
 
+### Project Goals
+* Have fun
+* Learn TypeScript
+* Learn more about Roguelikes
+* Focus on the minimum viable product!
+
 ## Get Started developing
 * npm cache clean #(if you run into anything weird)
 * npm install gulp #(if you don't have it already)
@@ -34,26 +40,25 @@ Attempting to keep a focused listof
       * -Traits should "add" in additional stats-
       * -Allow player to spend biomass on traits-
       * Need to show descriptions of selectable items
-      * Buying trait should refresh the subscreen instead of closing
+      * Attempting to buy a trait should refresh the subscreen instead of closing
   * View traits on character screen
-  * Replacements should actually replace
-  * Mutually Exclusive traits
-  * Dice or numeric style modifications
+  * Replacements should actually replace items
   * Player should be alerted when they can afford a trait
-  * Types of traits
+  * Simple Types of traits
    * -Passive Attack-
    * -Passive Defense-
    * -Passive MaxHP-
+   * Improved sight
+
+  * More advanced traits (probably going to ticket these guys)
+   * Mutually Exclusive traits
    * Digging
    * Passive Speed
    * Passive Regeneration
    * Conditional bonus?
+   * Percentage bonuses
    * Active abilities?
    * Different Damage/Resistant types 
-
-### Goals
-* Have fun
-* Learn TypeScript!
 
 ### Core mechanics
 * Evolution theme, monsters should evolve too!
