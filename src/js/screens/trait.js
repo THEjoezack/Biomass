@@ -8,8 +8,8 @@ Game.Screen.traitScreen = {
         this._display = display;
         var letters = 'abcdefghijklmnopqrstuvwxyz';
         display.drawText(0, 0, 'Choose a trait to purchase: ');
-        var selectedTraits = this._entity.getSelectedTraits();
 
+        var selectedTraits = this._entity.getSelectedTraits();
         var comparator = new Traits.TraitNodeComparator();
         this._options = comparator.getPurchasableTraits(this._sourceTraits,selectedTraits);
 
@@ -31,8 +31,7 @@ Game.Screen.traitScreen = {
         }
 
         // Render remaining stat points
-        display.drawText(0, 4 + this._options.length,
-            "Biomass: " + this._entity.getExperience());
+        display.drawText(0, 4 + this._options.length, "Biomass: " + this._entity.getExperience());
     },
     handleInput: function(inputType, inputData) {
         if (inputType === 'keydown') {

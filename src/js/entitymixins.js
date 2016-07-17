@@ -629,6 +629,18 @@ Game.EntityMixins.TraitGainer = {
                 }
             }
         }
+        
+        if (this.hasMixin('Sight')) {
+            for(var i = 0; i < trait.effects.length; i++) {
+                // attack/defense will be modified at the appropriate time
+                // hp needs to happen now
+                var effect = trait.effects[i];
+                var sightRadius = parseInt(effect.sightRadius);
+                if(sightRadius) {
+                    this._sightRadius += sightRadius;
+                }
+            }
+        }
 
         return true;
     },

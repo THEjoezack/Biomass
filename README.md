@@ -30,9 +30,10 @@ Only have place holder data in place, and there's still quite a bit to do.
 
 Attempting to keep a focused listof
 
-* Evolution theming (ongoing)
-* Basic UI/UX improvements (ongoing)
-* Passive Trait System
+### Milestone: Trait system
+* -Evolution theming (ongoing)-
+* -Basic UI/UX improvements (ongoing)-
+* -Passive Trait System-
   * -Load from file-
   * -Figure out which traits are selectable, given a tree-
     * Trait screen
@@ -40,25 +41,35 @@ Attempting to keep a focused listof
       * -Traits should "add" in additional stats-
       * -Allow player to spend biomass on traits-
       * -Attempting to buy a trait should refresh the subscreen instead of closing-
-      * Need to show descriptions of selectable items
-  * View traits on character screen
-  * Replacements should actually replace items
-  * Player should be alerted when they can afford a trait
-  * Simple Types of traits
+  * -Simple Types of traits-
    * -Passive Attack-
    * -Passive Defense-
    * -Passive MaxHP-
-   * Improved sight
+   * -Improved sight-
 
-  * More advanced traits (probably going to ticket these guys)
-   * Mutually Exclusive traits
-   * Digging
-   * Passive Speed
-   * Passive Regeneration
-   * Conditional bonus?
-   * Percentage bonuses
-   * Active abilities?
-   * Different Damage/Resistant types 
+### Milestone: Better trait integration
+* Character screen with status and traits
+* More traits!
+* What to do about the level system?
+* Evolution theming (ongoing)
+* Basic UI/UX improvements (ongoing)
+* Better trait tuning
+* Monsters should get traits too!
+
+#### Backlog
+* Trait improvements
+ * Need to show descriptions of selectable items
+ * More advanced traits
+  * Mutually Exclusive traits
+  * Digging
+  * Passive Speed
+  * Passive Regeneration
+  * Conditional bonus?
+  * Percentage bonuses
+  * Active abilities?
+  * Different Damage/Resistant types
+  * Replacements should actually replace items
+  * Player should be alerted when they can afford a new trait? 
 
 ### Core mechanics
 * Evolution theme, monsters should evolve too!
