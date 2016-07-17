@@ -214,6 +214,9 @@ Game.EntityMixins.Attacker = {
                 modifier += this.getArmor().getAttackValue();
             }
         }
+        if (this.hasMixin(Game.EntityMixins.TraitGainer)) {
+            modifier += this.getTraitAttackModifier();
+        }
         return this._attackValue + modifier;
     },
     increaseAttackValue: function(value) {
@@ -269,6 +272,9 @@ Game.EntityMixins.Destructible = {
             if (this.getArmor()) {
                 modifier += this.getArmor().getDefenseValue();
             }
+        }
+        if (this.hasMixin(Game.EntityMixins.TraitGainer)) {
+            modifier += this.getTraitDefenseModifier();
         }
         return this._defenseValue + modifier;
     },
@@ -589,6 +595,95 @@ Game.EntityMixins.Equipper = {
     }
 };
 
+Game.EntityMixins.TraitGainer = {
+    name: 'TraitGainer',
+    init: function(template) {
+        this._selectedTraits = new Traits.TraitNode();
+    },
+    addTrait: function(entity, traitNode) {
+        var selected = this.getSelectedTraits();
+        var clone = traitNode.shallowCopy();
+        var trait = clone.node;
+
+        if(this.hasMixin(Game.EntityMixins.ExperienceGainer)) {
+            var cost = trait.cost;
+            var deficit = cost - entity.getExperience();
+            if(deficit <= 0) {
+                entity.spendExperience(cost);
+            } else {
+                return false;
+            }
+        }
+
+        selected.add(clone);
+
+        // TODO this is pretty specific...
+        if(this.hasMixin(Game.EntityMixins.Destructible) && trait.effects.length) {
+            for(var i = 0; i < trait.effects.length; i++) {
+                // attack/defense will be modified at the appropriate time
+                // hp needs to happen now
+                var effect = trait.effects[i];
+                var maxHp = parseInt(effect.maxHp);
+                if(maxHp) {
+                    entity.increaseMaxHp(maxHp);
+                }
+            }
+        }
+        
+        if (this.hasMixin('Sight')) {
+            for(var i = 0; i < trait.effects.length; i++) {
+                // attack/defense will be modified at the appropriate time
+                // hp needs to happen now
+                var effect = trait.effects[i];
+                var sightRadius = parseInt(effect.sightRadius);
+                if(sightRadius) {
+                    this._sightRadius += sightRadius;
+                }
+            }
+        }
+
+        return true;
+    },
+    setSelectedTraits: function(selectedTraits) {
+        this._selectedTraits = selectedTraits;
+    },
+    getSelectedTraits: function() {
+        return this._selectedTraits;
+    },
+    getTraitAttackModifier: function() {
+        var flattened = this._selectedTraits.flatten();
+        var sum = 0;
+        for(var i = 0; i < flattened.length; i++) {
+            var effects = flattened[i].node.effects;
+            for(var j = 0; j < effects.length; j++) {
+                if(effects[j].damage) {
+                    // TODO make sure we're attacking?
+                    // TODO die roll instead of number
+                    sum += parseInt(effects[j].damage);
+                    // TODO type/percentages etc
+                }
+            }
+        }
+        return sum;
+    },
+    getTraitDefenseModifier: function() {
+        var flattened = this._selectedTraits.flatten();
+        var sum = 0;
+        for(var i = 0; i < flattened.length; i++) {
+            var effects = flattened[i].node.effects;
+            for(var j = 0; j < effects.length; j++) {
+                if(effects[j].defense) {
+                    // TODO make sure we're defending
+                    // TODO die roll instead of number
+                    sum += parseInt(effects[j].defense);
+                    // TODO type/percentages etc
+                }
+            }
+        }
+        return sum;
+    }
+};
+
 Game.EntityMixins.ExperienceGainer = {
     name: 'ExperienceGainer',
     init: function(template) {
@@ -596,8 +691,9 @@ Game.EntityMixins.ExperienceGainer = {
         this._experience = template['experience'] || 0;
         this._statPointsPerLevel = template['statPointsPerLevel'] || 1;
         this._statPoints = 0;
-        // Determine what stats can be levelled up.
+        // Determine what stats can be leveled up.
         this._statOptions = [];
+        this._selectedTraits = new Traits.TraitNode();
         if (this.hasMixin('Attacker')) {
             this._statOptions.push(['Increase attack value', this.increaseAttackValue]);
         }
@@ -626,6 +722,10 @@ Game.EntityMixins.ExperienceGainer = {
     },
     getStatOptions: function() {
         return this._statOptions;
+    },
+    spendExperience: function(points) {
+        // doesn't effect level
+        this._experience -= points;
     },
     giveExperience: function(points) {
         var statPointsGained = 0;

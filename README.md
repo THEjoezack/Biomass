@@ -1,17 +1,18 @@
-mkdir RogueOS;
-cd RogueOS;
-npm init
-npm install --save rot-js
-npm install --save-dev gulp
+Simple roguelike expiriment to gain some experience (namely TypeScript) and have a little fun along the way.
 
-// Gulp Dependencies
-var gulp = require('gulp');
-
-Based on...
+Standing on the shoulders of greatness:
 https://github.com/ondras/rot.js
 https://github.com/jokeofweek/jsrogue/
 
-## Getting started
+Play me here: https://thejoezack.github.io/Biomass/
+
+### Project Goals
+* Have fun
+* Learn TypeScript
+* Learn more about Roguelikes
+* Focus on the minimum viable product!
+
+## Get Started developing
 * npm cache clean #(if you run into anything weird)
 * npm install gulp #(if you don't have it already)
 * npm install #(from dir)
@@ -20,28 +21,65 @@ https://github.com/jokeofweek/jsrogue/
 * gulp test
 * npm install -g http-server
 * http-server
+* go to http://localhost:8080
 
-## TODO
+## Active deveopment
+Developing a tree based passive trait system that will allow the player to purchase and upgrade traits using the xp ("biomass") they accumulate.
 
-### Up next...
-* Allow player to spend xp on traits
-    * Show trait screen
-        * Load traits from file
-    * Character screen should show traits / basic info
-    * "Digging" should be a trait!
+Only have place holder data in place, and there's still quite a bit to do.
 
-### Goals
-* Have fun
-* Learn TypeScript!
+Attempting to keep a focused listof
+
+### Milestone: Trait system
+* -Evolution theming (ongoing)-
+* -Basic UI/UX improvements (ongoing)-
+* -Passive Trait System-
+  * -Load from file-
+  * -Figure out which traits are selectable, given a tree-
+    * Trait screen
+      * -Load traits from file-
+      * -Traits should "add" in additional stats-
+      * -Allow player to spend biomass on traits-
+      * -Attempting to buy a trait should refresh the subscreen instead of closing-
+  * -Simple Types of traits-
+   * -Passive Attack-
+   * -Passive Defense-
+   * -Passive MaxHP-
+   * -Improved sight-
+
+### Milestone: Better trait integration
+* Character screen with status and traits
+* More traits!
+* What to do about the level system?
+* Evolution theming (ongoing)
+* Basic UI/UX improvements (ongoing)
+* Better trait tuning
+* Monsters should get traits too!
+
+#### Backlog
+* Trait improvements
+ * Need to show descriptions of selectable items
+ * More advanced traits
+  * Mutually Exclusive traits
+  * Digging
+  * Passive Speed
+  * Passive Regeneration
+  * Conditional bonus?
+  * Percentage bonuses
+  * Active abilities?
+  * Different Damage/Resistant types
+  * Replacements should actually replace items
+  * Player should be alerted when they can afford a new trait? 
 
 ### Core mechanics
 * Evolution theme, monsters should evolve too!
 * Use "biomass" as singular currency to level up, evolve, heal, buff items
 
 ## Nice to haves that I care about
-* Skill tree like evolution system!
-* Unlocks
+* passive trait evolution system! (in progress)
+* a game should last no longer than 30 minutes
+* tiles!
+* unlock system 
 * autopickup some items
 * good targetting
 * Not too many items
-* Game should be over in an hour

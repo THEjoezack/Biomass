@@ -41,11 +41,23 @@ Game.Screen.playScreen = {
             );
         }
         // Render player stats
-        var stats = '%c{white}%b{black}';
-        stats += vsprintf('HP: %d/%d L: %d XP: %d', 
-            [this._player.getHp(), this._player.getMaxHp(),
-             this._player.getLevel(), this._player.getExperience()]);
-        display.drawText(0, screenHeight, stats);
+        display.drawText(0, screenHeight - 1, vsprintf(
+                '%sHealth:  %d/%d', 
+                [
+                    '%c{white}%b{black}',
+                    this._player.getHp(),
+                    this._player.getMaxHp()
+                ]
+            )
+        );
+        display.drawText(0, screenHeight, vsprintf(
+                '%sBiomass: %d', 
+                [
+                    '%c{white}%b{black}',
+                    this._player.getExperience()
+                ]
+            )
+        );
         // Render hunger state
         var hungerState = this._player.getHungerState();
         display.drawText(screenWidth - hungerState.length, screenHeight, hungerState);
@@ -149,6 +161,10 @@ Game.Screen.playScreen = {
                 this.move(0, -1, 0);
             } else if (inputData.keyCode === ROT.VK_DOWN) {
                 this.move(0, 1, 0);
+            } else if (inputData.keyCode === ROT.VK_T) {
+                // Show the trait screen
+                this.showEntitySubScreen(Game.Screen.traitScreen, this._player);
+                return;
             } else if (inputData.keyCode === ROT.VK_I) {
                 // Show the inventory screen
                 this.showItemsSubScreen(Game.Screen.inventoryScreen, this._player.getItems(),
@@ -241,6 +257,10 @@ Game.Screen.playScreen = {
         this._subScreen = subScreen;
         // Refresh screen on changing the subscreen
         Game.refresh();
+    },
+    showEntitySubScreen: function(subScreen, player) {
+        subScreen.setup(player);
+        this.setSubScreen(subScreen);
     },
     showItemsSubScreen: function(subScreen, items, emptyMessage) {
         if (items && subScreen.setup(this._player, items) > 0) {

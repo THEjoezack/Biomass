@@ -4,6 +4,8 @@ var bower = require('gulp-bower');
 var ts = require("gulp-typescript");
 var tsProject = ts.createProject("tsconfig.json");
 var jasmine = require('gulp-jasmine');
+var typedoc = require("gulp-typedoc");
+
 
 gulp.task('bower', function() {
   return bower();
@@ -15,7 +17,7 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task("default", function () {
+gulp.task("default", ['bower'], function () {
     return tsProject.src()
         .pipe(ts(tsProject))
         .js.pipe(gulp.dest("./dist"));
@@ -27,3 +29,12 @@ gulp.task("test", ['default'], function () {
       .pipe(jasmine())
 });
 
+gulp.task("doc", ['default'], function() {
+    return gulp
+        .src(["src/**/*.ts"])
+        .pipe(typedoc({
+            out: "docs/",
+            name: "Biomass"
+        }))
+    ;
+});

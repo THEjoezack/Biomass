@@ -1,6 +1,30 @@
 {
     "traits": [
         {
+            "id": "eyespots",
+            "name": "eye spots",
+            "cost": 5,
+            "effects": [
+                {
+                    "description": "increase sight radius by {0}",
+                    "sightRadius": 2,
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "compoundeyes",
+            "name": "compound eyes",
+            "cost": 15,
+            "effects": [
+                {
+                    "description": "increase sight radius by {0}",
+                    "sightRadius": 5,
+                    "on": "passive"
+                }
+            ]
+        },
+        {
             "id": "horns",
             "name": "horns",
             "cost": 10,
@@ -8,9 +32,9 @@
                 {
                     "description": "{0} chance to do {1} damage on {2}",
                     "percentage": 10,
-                    "damage": "1d2",
-                    "damagetype": "physical",
-                    "on": "attack"
+                    "damage": "10",
+                    "damageType": "physical",
+                    "on": "passive"
                 }
             ]
         },
@@ -22,23 +46,51 @@
                 {
                     "description": "{0} chance to do {1} damage on {2}",
                     "percentage": 15,
-                    "damage": "1d3",
-                    "damagetype": "physical",
-                    "on": "attack"
+                    "damage": "20",
+                    "damageType": "physical",
+                    "on": "passive"
                 }
             ],
-            "replaces": "horns"
+            "replacesId": "horns",
+            "requiresId": "horns"
         },
         {
             "id": "thickskin",
             "name": "thick skin",
-            "cost": 10,
+            "cost": 12,
             "effects": [
                 {
                     "description": "+{0} defense",
-                    "defense": "1",
-                    "defensetype": "physical",
-                    "on": "attack"
+                    "defense": "10",
+                    "defenseType": "physical",
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "blubber",
+            "name": "blubber",
+            "cost": 20,
+            "requiresId": "thickskin",
+            "effects": [
+                {
+                    "description": "+{0} hp",
+                    "maxHp": "15",
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "scales",
+            "name": "scales",
+            "cost": 20,
+            "requiresId": "thickskin",
+            "effects": [
+                {
+                    "description": "+{0} defense",
+                    "defense": "10",
+                    "defenseType": "physical",
+                    "on": "passive"
                 }
             ]
         }

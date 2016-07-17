@@ -1,3 +1,23 @@
 body {
     background-color: black;
 }
+
+#gameContainer {
+    margin: 40px;
+}
+
+.gameInfo {
+    margin: 40px;   
+}
+
+body {
+    color: gray;
+}
+
+a {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

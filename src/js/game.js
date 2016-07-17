@@ -6,8 +6,7 @@ var Game =  {
     Screen: {},
 	init: function() {
         // Any necessary initialization will go here.
-        this._display = new ROT.Display({width: this._screenWidth,
-                                         height: this._screenHeight + 1});
+        this._display = new ROT.Display({width: this._screenWidth, height: this._screenHeight + 1});
         // Create a helper function for binding to an event
         // and making it send it to the screen
         var game = this; // So that we don't lose this
@@ -66,7 +65,7 @@ window.onload = function() {
         // Initialize the game
         Game.init();
         // Add the container to our HTML page
-        document.body.appendChild(Game.getDisplay().getContainer());
+        document.getElementById('gameContainer').appendChild(Game.getDisplay().getContainer());
         // Load the start screen
         Game.switchScreen(Game.Screen.startScreen);
     }
