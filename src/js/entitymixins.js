@@ -611,10 +611,7 @@ Game.EntityMixins.TraitGainer = {
             if(deficit <= 0) {
                 entity.spendExperience(cost);
             } else {
-                // TODO better alerting!
-                var message = vsprintf("You can't afford %s yet, you need %d more biomass.", [ trait.name, deficit]);
-                Game.sendMessage(this, message);
-                return;
+                return false;
             }
         }
 
@@ -632,6 +629,20 @@ Game.EntityMixins.TraitGainer = {
                 }
             }
         }
+        
+        if (this.hasMixin('Sight')) {
+            for(var i = 0; i < trait.effects.length; i++) {
+                // attack/defense will be modified at the appropriate time
+                // hp needs to happen now
+                var effect = trait.effects[i];
+                var sightRadius = parseInt(effect.sightRadius);
+                if(sightRadius) {
+                    this._sightRadius += sightRadius;
+                }
+            }
+        }
+
+        return true;
     },
     setSelectedTraits: function(selectedTraits) {
         this._selectedTraits = selectedTraits;

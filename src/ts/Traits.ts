@@ -20,6 +20,7 @@ module Traits {
         description:string;
         percentage:number;
         maxHp:string;
+        sightRadius:string;
         defense:string;
         defenseType:string;
         damage:string;
@@ -34,6 +35,7 @@ module Traits {
             this.description = input.description;
             this.percentage = input.percentage;
             this.maxHp = input.maxHp;
+            this.sightRadius = input.sightRadius;
             this.defense = input.defense;
             this.defenseType = input.defenseType;
             this.damage = input.damage;

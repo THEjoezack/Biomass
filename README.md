@@ -6,6 +6,12 @@ https://github.com/jokeofweek/jsrogue/
 
 Play me here: https://thejoezack.github.io/Biomass/
 
+### Project Goals
+* Have fun
+* Learn TypeScript
+* Learn more about Roguelikes
+* Focus on the minimum viable product!
+
 ## Get Started developing
 * npm cache clean #(if you run into anything weird)
 * npm install gulp #(if you don't have it already)
@@ -24,36 +30,46 @@ Only have place holder data in place, and there's still quite a bit to do.
 
 Attempting to keep a focused listof
 
-* Evolution theming (ongoing)
-* Basic UI/UX improvements (ongoing)
-* Passive Trait System
+### Milestone: Trait system
+* -Evolution theming (ongoing)-
+* -Basic UI/UX improvements (ongoing)-
+* -Passive Trait System-
   * -Load from file-
   * -Figure out which traits are selectable, given a tree-
     * Trait screen
       * -Load traits from file-
       * -Traits should "add" in additional stats-
       * -Allow player to spend biomass on traits-
-      * Need to show descriptions of selectable items
-      * Buying trait should refresh the subscreen instead of closing
-  * View traits on character screen
-  * Replacements should actually replace
-  * Mutually Exclusive traits
-  * Dice or numeric style modifications
-  * Player should be alerted when they can afford a trait
-  * Types of traits
+      * -Attempting to buy a trait should refresh the subscreen instead of closing-
+  * -Simple Types of traits-
    * -Passive Attack-
    * -Passive Defense-
    * -Passive MaxHP-
-   * Digging
-   * Passive Speed
-   * Passive Regeneration
-   * Conditional bonus?
-   * Active abilities?
-   * Different Damage/Resistant types 
+   * -Improved sight-
 
-### Goals
-* Have fun
-* Learn TypeScript!
+### Milestone: Better trait integration
+* Character screen with status and traits
+* More traits!
+* What to do about the level system?
+* Evolution theming (ongoing)
+* Basic UI/UX improvements (ongoing)
+* Better trait tuning
+* Monsters should get traits too!
+
+#### Backlog
+* Trait improvements
+ * Need to show descriptions of selectable items
+ * More advanced traits
+  * Mutually Exclusive traits
+  * Digging
+  * Passive Speed
+  * Passive Regeneration
+  * Conditional bonus?
+  * Percentage bonuses
+  * Active abilities?
+  * Different Damage/Resistant types
+  * Replacements should actually replace items
+  * Player should be alerted when they can afford a new trait? 
 
 ### Core mechanics
 * Evolution theme, monsters should evolve too!

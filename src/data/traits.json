@@ -1,6 +1,30 @@
 {
     "traits": [
         {
+            "id": "eyespots",
+            "name": "eye spots",
+            "cost": 5,
+            "effects": [
+                {
+                    "description": "increase sight radius by {0}",
+                    "sightRadius": 2,
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "compoundeyes",
+            "name": "compound eyes",
+            "cost": 15,
+            "effects": [
+                {
+                    "description": "increase sight radius by {0}",
+                    "sightRadius": 5,
+                    "on": "passive"
+                }
+            ]
+        },
+        {
             "id": "horns",
             "name": "horns",
             "cost": 10,
