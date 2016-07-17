@@ -5,6 +5,7 @@ Game.Screen.traitScreen = {
         this._sourceTraits = sourceTraits; // TODO Global
     },
     render: function(display) {
+        this._display = display;
         var letters = 'abcdefghijklmnopqrstuvwxyz';
         display.drawText(0, 0, 'Choose a trait to purchase: ');
         var selectedTraits = this._entity.getSelectedTraits();
@@ -41,17 +42,22 @@ Game.Screen.traitScreen = {
                 // to know what letter of the alphabet we used.
                 var index = inputData.keyCode - ROT.VK_A;
                 if (this._options[index]) {
-                    // TODO check if the player can afford it
-                    // TODO show description
-                    this._entity.addTrait(this._entity, this._options[index]);
-                    // TODO decrease biomass
-                    // TODO why does refresh leave?
-                    Game.refresh();
+                    var result = this._entity.addTrait(this._entity, this._options[index]);
+                    if(result) {
+                        Game.refresh();
+                    } else {
+                        this._display.drawText(
+                            0,
+                            5 + this._options.length, 
+                            '%c{yellow}You can\'t afford that yet!'
+                        );
+                    }
+                    
                 }
             }
 
             // If a letter was pressed, check if it matches to a valid option.
-            if (inputData.keyCode >= ROT.VK_ESCAPE) {
+            if (inputData.keyCode == ROT.VK_ESCAPE) {
                 Game.Screen.playScreen.setSubScreen(undefined);
             }
         }

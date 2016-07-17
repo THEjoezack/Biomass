@@ -611,10 +611,7 @@ Game.EntityMixins.TraitGainer = {
             if(deficit <= 0) {
                 entity.spendExperience(cost);
             } else {
-                // TODO better alerting!
-                var message = vsprintf("You can't afford %s yet, you need %d more biomass.", [ trait.name, deficit]);
-                Game.sendMessage(this, message);
-                return;
+                return false;
             }
         }
 
@@ -632,6 +629,8 @@ Game.EntityMixins.TraitGainer = {
                 }
             }
         }
+
+        return true;
     },
     setSelectedTraits: function(selectedTraits) {
         this._selectedTraits = selectedTraits;
