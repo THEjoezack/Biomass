@@ -52,7 +52,6 @@ Game.Screen.traitScreen = {
                             '%c{yellow}You can\'t afford that yet!'
                         );
                     }
-                    
                 }
             }
 

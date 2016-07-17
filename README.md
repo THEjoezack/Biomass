@@ -39,8 +39,8 @@ Attempting to keep a focused listof
       * -Load traits from file-
       * -Traits should "add" in additional stats-
       * -Allow player to spend biomass on traits-
+      * -Attempting to buy a trait should refresh the subscreen instead of closing-
       * Need to show descriptions of selectable items
-      * Attempting to buy a trait should refresh the subscreen instead of closing
   * View traits on character screen
   * Replacements should actually replace items
   * Player should be alerted when they can afford a trait
