@@ -10,6 +10,7 @@ var Traits;
             this.description = input.description;
             this.percentage = input.percentage;
             this.maxHp = input.maxHp;
+            this.sightRadius = input.sightRadius;
             this.defense = input.defense;
             this.defenseType = input.defenseType;
             this.damage = input.damage;
