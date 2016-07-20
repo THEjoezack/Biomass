@@ -8,13 +8,10 @@ var Traits;
         }
         CumulativeEffect.prototype.load = function (input) {
             this.description = input.description;
-            this.percentage = input.percentage;
             this.maxHp = input.maxHp;
             this.sightRadius = input.sightRadius;
             this.defense = input.defense;
-            this.defenseType = input.defenseType;
             this.damage = input.damage;
-            this.damageType = input.damageType;
             this.on = input.on;
         };
         return CumulativeEffect;

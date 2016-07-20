@@ -14,9 +14,11 @@ var Game =  {
             window.addEventListener(event, function(e) {
                 // When an event is received, send it to the
                 // screen if there is one
-                if (game._currentScreen !== null) {
+                if (game._currentScreen) {
                     // Send the event type and data to the screen
                     game._currentScreen.handleInput(event, e);
+                } else {
+                    location.reload();
                 }
             });
         };
@@ -50,7 +52,7 @@ var Game =  {
         // Update our current screen, notify it we entered
         // and then render it
         this._currentScreen = screen;
-        if (!this._currentScreen !== null) {
+        if (this._currentScreen) {
             this._currentScreen.enter();
             this.refresh();
         }

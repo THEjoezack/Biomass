@@ -14,12 +14,29 @@ Game.Screen.traitScreen = {
         this._options = comparator.getPurchasableTraits(this._sourceTraits,selectedTraits);
 
         // Iterate through each of our options
+        var lineIndex = 2;
         for (var i = 0; i < this._options.length; i++) {
+            lineIndex += 1;
+
+            var option = this._options[i].node;
+
             display.drawText(
                 0,
-                2 + i, 
-                letters.substring(i, i + 1) + ' - ' + this._options[i].node.id + ' (' + this._options[i].node.cost + ' biomass)'
+                lineIndex, 
+                letters.substring(i, i + 1) + ' - ' + option.name + ' (' + option.cost + ' biomass)'
             );
+
+            var effects = option.effects;
+            for (var j = 0; j < effects.length; j++) {
+                lineIndex += 1;
+                display.drawText(
+                    0,
+                    lineIndex, 
+                    '\t   ' + effects[j].description
+                );
+            }
+            lineIndex += 1;
+
         }
 
         if(!this._options.length) {
@@ -31,7 +48,9 @@ Game.Screen.traitScreen = {
         }
 
         // Render remaining stat points
-        display.drawText(0, 4 + this._options.length, "Biomass: " + this._entity.getExperience());
+        lineIndex += 2;
+        display.drawText(0, lineIndex, "Biomass: " + this._entity.getExperience());
+        this._lineIndex = lineIndex;
     },
     handleInput: function(inputType, inputData) {
         if (inputType === 'keydown') {
@@ -47,7 +66,7 @@ Game.Screen.traitScreen = {
                     } else {
                         this._display.drawText(
                             0,
-                            5 + this._options.length, 
+                            this._lineIndex + 1, 
                             '%c{yellow}You can\'t afford that yet!'
                         );
                     }

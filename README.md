@@ -30,35 +30,27 @@ Only have place holder data in place, and there's still quite a bit to do.
 
 Attempting to keep a focused listof
 
-### Milestone: Trait system
-* -Evolution theming (ongoing)-
-* -Basic UI/UX improvements (ongoing)-
-* -Passive Trait System-
-  * -Load from file-
-  * -Figure out which traits are selectable, given a tree-
-    * Trait screen
-      * -Load traits from file-
-      * -Traits should "add" in additional stats-
-      * -Allow player to spend biomass on traits-
-      * -Attempting to buy a trait should refresh the subscreen instead of closing-
-  * -Simple Types of traits-
-   * -Passive Attack-
-   * -Passive Defense-
-   * -Passive MaxHP-
-   * -Improved sight-
-
-### Milestone: Better trait integration
-* Character screen with status and traits
-* More traits!
-* What to do about the level system?
-* Evolution theming (ongoing)
-* Basic UI/UX improvements (ongoing)
-* Better trait tuning
-* Monsters should get traits too!
+### Working on
+* Ability menu
+ * hit "a" to show all abilities
+ * selecting an ability prompts for a target
+ * be able to purchase abilities through trait system?
+ * be able to configure a short-cut key
+ * cooldowns
 
 #### Backlog
+* Better trait integration
+ * Character screen with status and traits
+ * More traits!
+ * What to do about the level system?
+ * Evolution theming (ongoing)
+ * Basic UI/UX improvements (ongoing)
+ * Better trait tuning
+ * Monsters should get traits too!
+* Get rid of hunger?
 * Trait improvements
  * Need to show descriptions of selectable items
+ * XP gain?
  * More advanced traits
   * Mutually Exclusive traits
   * Digging
@@ -70,6 +62,7 @@ Attempting to keep a focused listof
   * Different Damage/Resistant types
   * Replacements should actually replace items
   * Player should be alerted when they can afford a new trait? 
+* Configurable keys
 
 ### Core mechanics
 * Evolution theme, monsters should evolve too!
