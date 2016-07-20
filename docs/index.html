@@ -70,6 +70,13 @@
 					<a href="https://github.com/ondras/rot.js">https://github.com/ondras/rot.js</a>
 				<a href="https://github.com/jokeofweek/jsrogue/">https://github.com/jokeofweek/jsrogue/</a></p>
 				<p>Play me here: <a href="https://thejoezack.github.io/Biomass/">https://thejoezack.github.io/Biomass/</a></p>
+				<h3 id="project-goals">Project Goals</h3>
+				<ul>
+					<li>Have fun</li>
+					<li>Learn TypeScript</li>
+					<li>Learn more about Roguelikes</li>
+					<li>Focus on the minimum viable product!</li>
+				</ul>
 				<h2 id="get-started-developing">Get Started developing</h2>
 				<ul>
 					<li>npm cache clean #(if you run into anything weird)</li>
@@ -86,46 +93,47 @@
 				<p>Developing a tree based passive trait system that will allow the player to purchase and upgrade traits using the xp (&quot;biomass&quot;) they accumulate.</p>
 				<p>Only have place holder data in place, and there&#39;s still quite a bit to do.</p>
 				<p>Attempting to keep a focused listof</p>
+				<h3 id="working-on">Working on</h3>
 				<ul>
-					<li>Evolution theming (ongoing)</li>
-					<li>Basic UI/UX improvements (ongoing)</li>
-					<li>Passive Trait System<ul>
-							<li>-Load from file-</li>
-							<li>-Figure out which traits are selectable, given a tree-<ul>
-									<li>Trait screen<ul>
-											<li>-Load traits from file-</li>
-											<li>-Traits should &quot;add&quot; in additional stats-</li>
-											<li>Allow player to spend biomass on traits</li>
-											<li>Buying trait should refresh the subscreen instead of closing</li>
-											<li>Show that TraitGainer has a dependency on ExperienceGainer?</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li>View traits on character screen</li>
-							<li>Replacements should actually replace</li>
-							<li>Mutually Exclusive traits</li>
-							<li>Dice or numeric style modifications</li>
-							<li>Player should be alerted when they can afford a trait</li>
-							<li>Types of traits<ul>
-									<li>-Passive Attack-</li>
-									<li>-Passive Defense-</li>
-									<li>Passive MaxHP</li>
-									<li>Passive Regeneration</li>
-									<li>Passive Speed</li>
-									<li>Digging</li>
-									<li>Conditional bonus?</li>
-									<li>Active abilities?</li>
-									<li>Different Damage/Resistant types </li>
-								</ul>
-							</li>
+					<li>Ability menu<ul>
+							<li>hit &quot;a&quot; to show all abilities</li>
+							<li>selecting an ability prompts for a target</li>
+							<li>be able to purchase abilities through trait system?</li>
+							<li>be able to configure a short-cut key</li>
+							<li>cooldowns</li>
 						</ul>
 					</li>
 				</ul>
-				<h3 id="goals">Goals</h3>
+				<h4 id="backlog">Backlog</h4>
 				<ul>
-					<li>Have fun</li>
-					<li>Learn TypeScript!</li>
+					<li>Better trait integration<ul>
+							<li>Character screen with status and traits</li>
+							<li>More traits!</li>
+							<li>What to do about the level system?</li>
+							<li>Evolution theming (ongoing)</li>
+							<li>Basic UI/UX improvements (ongoing)</li>
+							<li>Better trait tuning</li>
+							<li>Monsters should get traits too!</li>
+						</ul>
+					</li>
+					<li>Get rid of hunger?</li>
+					<li>Trait improvements<ul>
+							<li>Need to show descriptions of selectable items</li>
+							<li>XP gain?</li>
+							<li>More advanced traits</li>
+							<li>Mutually Exclusive traits</li>
+							<li>Digging</li>
+							<li>Passive Speed</li>
+							<li>Passive Regeneration</li>
+							<li>Conditional bonus?</li>
+							<li>Percentage bonuses</li>
+							<li>Active abilities?</li>
+							<li>Different Damage/Resistant types</li>
+							<li>Replacements should actually replace items</li>
+							<li>Player should be alerted when they can afford a new trait? </li>
+						</ul>
+					</li>
+					<li>Configurable keys</li>
 				</ul>
 				<h3 id="core-mechanics">Core mechanics</h3>
 				<ul>

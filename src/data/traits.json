@@ -2,11 +2,11 @@
     "traits": [
         {
             "id": "eyespots",
-            "name": "eye spots",
+            "name": "Eye Spots",
             "cost": 5,
             "effects": [
                 {
-                    "description": "increase sight radius by {0}",
+                    "description": "Increase sight radius by 2",
                     "sightRadius": 2,
                     "on": "passive"
                 }
@@ -14,11 +14,12 @@
         },
         {
             "id": "compoundeyes",
-            "name": "compound eyes",
+            "name": "Compound Eyes",
             "cost": 15,
+            "requiresId": "eyespots",
             "effects": [
                 {
-                    "description": "increase sight radius by {0}",
+                    "description": "Increase sight radius by 2",
                     "sightRadius": 5,
                     "on": "passive"
                 }
@@ -26,28 +27,24 @@
         },
         {
             "id": "horns",
-            "name": "horns",
+            "name": "Horns",
             "cost": 10,
             "effects": [
                 {
-                    "description": "{0} chance to do {1} damage on {2}",
-                    "percentage": 10,
+                    "description": "+10 damage",
                     "damage": "10",
-                    "damageType": "physical",
                     "on": "passive"
                 }
             ]
         },
         {
             "id": "antlers",
-            "name": "antlers",
+            "name": "Antlers",
             "cost": 10,
             "effects": [
                 {
-                    "description": "{0} chance to do {1} damage on {2}",
-                    "percentage": 15,
+                    "description": "+20 damage",
                     "damage": "20",
-                    "damageType": "physical",
                     "on": "passive"
                 }
             ],
@@ -56,25 +53,24 @@
         },
         {
             "id": "thickskin",
-            "name": "thick skin",
+            "name": "Thick Skin",
             "cost": 12,
             "effects": [
                 {
-                    "description": "+{0} defense",
+                    "description": "+10 defense",
                     "defense": "10",
-                    "defenseType": "physical",
                     "on": "passive"
                 }
             ]
         },
         {
             "id": "blubber",
-            "name": "blubber",
+            "name": "Blubber",
             "cost": 20,
             "requiresId": "thickskin",
             "effects": [
                 {
-                    "description": "+{0} hp",
+                    "description": "+15 hp",
                     "maxHp": "15",
                     "on": "passive"
                 }
@@ -82,14 +78,58 @@
         },
         {
             "id": "scales",
-            "name": "scales",
+            "name": "Scales",
             "cost": 20,
             "requiresId": "thickskin",
             "effects": [
                 {
-                    "description": "+{0} defense",
+                    "description": "+10 defense",
                     "defense": "10",
-                    "defenseType": "physical",
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "level1",
+            "name": "Level up",
+            "cost": 50,
+            "effects": [
+                {
+                    "description": "+5 damage",
+                    "damage": "5",
+                    "on": "passive"
+                },
+                {
+                    "description": "+5 defense",
+                    "defense": "5",
+                    "on": "passive"
+                },
+                {
+                    "description": "+5 maxHp",
+                    "maxHp": "5",
+                    "on": "passive"
+                }
+            ]
+        },
+        {
+            "id": "level2",
+            "name": "Level up",
+            "cost": 50,
+            "requiresId": "level1",
+            "effects": [
+                {
+                    "description": "+5 damage",
+                    "damage": "5",
+                    "on": "passive"
+                },
+                {
+                    "description": "+5 defense",
+                    "defense": "5",
+                    "on": "passive"
+                },
+                {
+                    "description": "+5 maxHp",
+                    "maxHp": "5",
                     "on": "passive"
                 }
             ]

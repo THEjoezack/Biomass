@@ -47,6 +47,7 @@ Attempting to keep a focused listof
  * Basic UI/UX improvements (ongoing)
  * Better trait tuning
  * Monsters should get traits too!
+* Get rid of hunger?
 * Trait improvements
  * Need to show descriptions of selectable items
  * XP gain?
