@@ -10,8 +10,7 @@ Game.Screen.craftingScreen = {
         display.drawText(0, 0, 'Choose an item to craft: ');
 
         var selectedTraits = this._entity.getSelectedTraits();
-        var comparator = new Traits.TreeNodeComparator();
-        this._options = comparator.getFreeNodes(this._sourceTraits,selectedTraits);
+        this._options = this._sourceTraits.getFreeNodes(selectedTraits);
 
         // Iterate through each of our options
         var lineIndex = 2;

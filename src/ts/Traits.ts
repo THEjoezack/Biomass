@@ -176,17 +176,11 @@ module Traits {
             return false;
         }
 
-        abstract load(input:any):void;
-    }
-
-    /**
-     * Compares TreeNode to each other
-     */
-    export class TreeNodeComparator<T extends DependencyNode> {
         /**
          * Finds items that either have no requirements or the requirements have been met in another (optional tree)
          */
-        getFreeNodes(source:TreeNode<T>, selected?:TreeNode<T>):Array<TreeNode<T>> {
+        getFreeNodes(selected?:TreeNode<T>):Array<TreeNode<T>> {
+            let source = this;
             let result = new Array<TreeNode<T>>();
 
             // flatten the source
@@ -215,7 +209,7 @@ module Traits {
 
             return result;
         }
-
+        abstract load(input:any):void;
     }
 
     export class TraitNode extends TreeNode<Trait> {
