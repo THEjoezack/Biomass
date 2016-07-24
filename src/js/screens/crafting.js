@@ -30,7 +30,7 @@ Game.Screen.craftingScreen = {
                 display.drawText(
                     0,
                     lineIndex, 
-                    '\t   +' + option.attackValue + ' Attack'
+                    '\t   +' + option.attackValue + ' damage'
                 );
             }
 
@@ -39,7 +39,7 @@ Game.Screen.craftingScreen = {
                 display.drawText(
                     0,
                     lineIndex, 
-                    '\t   +' + option.defenseValue + ' Defense'
+                    '\t   +' + option.defenseValue + ' defense'
                 );
             }
             lineIndex += 1;
