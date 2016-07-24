@@ -2,15 +2,15 @@ Game.Screen.craftingScreen = {
     setup: function(entity) {
         // Must be called before rendering.
         this._entity = entity;
-        this._sourceTraits = sourceTraits; // TODO Global
+        this._sourceItems = sourceItems; // TODO Global
     },
     render: function(display) {
         this._display = display;
         var letters = 'abcdefghijklmnopqrstuvwxyz';
         display.drawText(0, 0, 'Choose an item to craft: ');
 
-        var selectedTraits = this._entity.getSelectedTraits();
-        this._options = this._sourceTraits.getFreeNodes(selectedTraits);
+        var craftedItems = null;//this._entity.getCraftableItems();
+        this._options = this._sourceItems.getFreeNodes();
 
         // Iterate through each of our options
         var lineIndex = 2;
@@ -25,13 +25,21 @@ Game.Screen.craftingScreen = {
                 letters.substring(i, i + 1) + ' - ' + option.name + ' (' + option.cost + ' biomass)'
             );
 
-            var effects = option.effects;
-            for (var j = 0; j < effects.length; j++) {
+            if(option.attackValue) {
                 lineIndex += 1;
                 display.drawText(
                     0,
                     lineIndex, 
-                    '\t   ' + effects[j].description
+                    '\t   +' + option.attackValue + ' Attack'
+                );
+            }
+
+            if(option.defenseValue) {
+                lineIndex += 1;
+                display.drawText(
+                    0,
+                    lineIndex, 
+                    '\t   +' + option.defenseValue + ' Defense'
                 );
             }
             lineIndex += 1;
@@ -42,7 +50,7 @@ Game.Screen.craftingScreen = {
             display.drawText(
                 0,
                 2, 
-                'Nothing left to get!'
+                'Nothing to craft!'
             );
         }
 
@@ -59,14 +67,17 @@ Game.Screen.craftingScreen = {
                 // to know what letter of the alphabet we used.
                 var index = inputData.keyCode - ROT.VK_A;
                 if (this._options[index]) {
-                    var result = this._entity.addTrait(this._entity, this._options[index]);
+                    // add to inventory
+                    // todo fill in plugins?
+                    // deduct cost
+                    var result = false;
                     if(result) {
                         Game.refresh();
                     } else {
                         this._display.drawText(
                             0,
                             this._lineIndex + 1, 
-                            '%c{yellow}You can\'t afford that yet!'
+                            '%c{yellow}You can\'t afford that right now!'
                         );
                     }
                 }

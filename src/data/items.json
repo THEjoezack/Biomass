@@ -1,0 +1,21 @@
+{
+    "items": [
+        {
+            "id": "dagger",
+            "name": "dagger",
+            "cost": 10,
+            "character": ")",
+            "foreground": "gray",
+            "attackValue": 5,
+            "wieldable": true,
+            "tags": "Equipable",
+            "effects": [
+                {
+                    "description": "Increase sight radius by 2",
+                    "sightRadius": 2,
+                    "on": "passive"
+                }
+            ]
+        }
+    ]
+}

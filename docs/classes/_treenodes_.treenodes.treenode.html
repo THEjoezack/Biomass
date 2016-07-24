@@ -57,13 +57,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_traits_.html">&quot;Traits&quot;</a>
+					<a href="../modules/_treenodes_.html">&quot;TreeNodes&quot;</a>
 				</li>
 				<li>
-					<a href="../modules/_traits_.traits.html">Traits</a>
+					<a href="../modules/_treenodes_.treenodes.html">TreeNodes</a>
 				</li>
 				<li>
-					<a href="_traits_.traits.treenode.html">TreeNode</a>
+					<a href="_treenodes_.treenodes.treenode.html">TreeNode</a>
 				</li>
 			</ul>
 			<h1>Class TreeNode&lt;T&gt;</h1>
@@ -84,7 +84,7 @@
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>T<span class="tsd-signature-symbol">: </span><a href="../interfaces/_traits_.traits.dependencynode.html" class="tsd-signature-type">DependencyNode</a></h4>
+						<h4>T<span class="tsd-signature-symbol">: </span><a href="../interfaces/_treenodes_.treenodes.dependencynode.html" class="tsd-signature-type">DependencyNode</a></h4>
 					</li>
 				</ul>
 			</section>
@@ -95,6 +95,9 @@
 						<span class="target">TreeNode</span>
 						<ul class="tsd-hierarchy">
 							<li>
+								<a href="_items_.items.itemnode.html" class="tsd-signature-type">ItemNode</a>
+							</li>
+							<li>
 								<a href="_traits_.traits.traitnode.html" class="tsd-signature-type">TraitNode</a>
 							</li>
 						</ul>
@@ -104,7 +107,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_traits_.traits.loadable.html" class="tsd-signature-type">Loadable</a></li>
+					<li><a href="../interfaces/_treenodes_.treenodes.loadable.html" class="tsd-signature-type">Loadable</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -114,24 +117,25 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#children" class="tsd-kind-icon">children</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#node" class="tsd-kind-icon">node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#children" class="tsd-kind-icon">children</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#node" class="tsd-kind-icon">node</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#add" class="tsd-kind-icon">add</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#findbyid" class="tsd-kind-icon">find<wbr>ById</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#flatten" class="tsd-kind-icon">flatten</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#load" class="tsd-kind-icon">load</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_traits_.traits.treenode.html#traverse" class="tsd-kind-icon">traverse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#findbyid" class="tsd-kind-icon">find<wbr>ById</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#flatten" class="tsd-kind-icon">flatten</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#getfreenodes" class="tsd-kind-icon">get<wbr>Free<wbr>Nodes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#load" class="tsd-kind-icon">load</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_treenodes_.treenodes.treenode.html#traverse" class="tsd-kind-icon">traverse</a></li>
 							</ul>
 						</section>
 					</div>
@@ -143,13 +147,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Tree<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, children<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tree<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, children<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L95">Traits.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L34">TreeNodes.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -158,10 +162,10 @@
 									<h5>node: <span class="tsd-signature-type">T</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> children: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> children: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -171,10 +175,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="children" class="tsd-anchor"></a>
 					<h3>children</h3>
-					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L95">Traits.ts:95</a></li>
+							<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L34">TreeNodes.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -184,7 +188,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L94">Traits.ts:94</a></li>
+							<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L33">TreeNodes.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -195,13 +199,13 @@
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>child<span class="tsd-signature-symbol">: </span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span>child<span class="tsd-signature-symbol">: </span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L106">Traits.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L45">TreeNodes.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -213,7 +217,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>child: <a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>child: <a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -224,13 +228,13 @@
 					<a name="findbyid" class="tsd-anchor"></a>
 					<h3>find<wbr>ById</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, children<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, children<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L125">Traits.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L64">TreeNodes.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -245,10 +249,10 @@
 									<h5>id: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> children: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> children: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -256,13 +260,13 @@
 					<a name="flatten" class="tsd-anchor"></a>
 					<h3>flatten</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L142">Traits.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L81">TreeNodes.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -270,7 +274,35 @@
 									<p>Turn a tree into an array, depth first. Returns a clone</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getfreenodes" class="tsd-anchor"></a>
+					<h3>get<wbr>Free<wbr>Nodes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Free<wbr>Nodes<span class="tsd-signature-symbol">(</span>selected<span class="tsd-signature-symbol">?: </span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L121">TreeNodes.ts:121</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Finds items that either have no requirements or the requirements have been met in another (optional tree)</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> selected: <a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -283,9 +315,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_traits_.traits.loadable.html">Loadable</a>.<a href="../interfaces/_traits_.traits.loadable.html#load">load</a></p>
+								<p>Implementation of <a href="../interfaces/_treenodes_.treenodes.loadable.html">Loadable</a>.<a href="../interfaces/_treenodes_.treenodes.loadable.html#load">load</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L179">Traits.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L151">TreeNodes.ts:151</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -302,13 +334,13 @@
 					<a name="traverse" class="tsd-anchor"></a>
 					<h3>traverse</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">traverse<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_traits_.traits.treenodetraversalaction.html" class="tsd-signature-type">TreeNodeTraversalAction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, node<span class="tsd-signature-symbol">?: </span><a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">traverse<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_treenodes_.treenodes.treenodetraversalaction.html" class="tsd-signature-type">TreeNodeTraversalAction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, node<span class="tsd-signature-symbol">?: </span><a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L161">Traits.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/9b2003c/src/ts/TreeNodes.ts#L100">TreeNodes.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -322,10 +354,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>action: <a href="../interfaces/_traits_.traits.treenodetraversalaction.html" class="tsd-signature-type">TreeNodeTraversalAction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>action: <a href="../interfaces/_treenodes_.treenodes.treenodetraversalaction.html" class="tsd-signature-type">TreeNodeTraversalAction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> node: <a href="_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> node: <a href="_treenodes_.treenodes.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -344,59 +376,50 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_traits_.traits.cumulativeeffect.html" class="tsd-kind-icon">Cumulative<wbr>Effect</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_traits_.traits.trait.html" class="tsd-kind-icon">Trait</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="_traits_.traits.traitnode.html" class="tsd-kind-icon">Trait<wbr>Node</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_traits_.traits.treenode.html" class="tsd-kind-icon">Tree<wbr>Node</a>
+						<a href="_treenodes_.treenodes.treenode.html" class="tsd-kind-icon">Tree<wbr>Node</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="_treenodes_.treenodes.treenode.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#children" class="tsd-kind-icon">children</a>
+								<a href="_treenodes_.treenodes.treenode.html#children" class="tsd-kind-icon">children</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#node" class="tsd-kind-icon">node</a>
+								<a href="_treenodes_.treenodes.treenode.html#node" class="tsd-kind-icon">node</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#add" class="tsd-kind-icon">add</a>
+								<a href="_treenodes_.treenodes.treenode.html#add" class="tsd-kind-icon">add</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#findbyid" class="tsd-kind-icon">find<wbr>ById</a>
+								<a href="_treenodes_.treenodes.treenode.html#findbyid" class="tsd-kind-icon">find<wbr>ById</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#flatten" class="tsd-kind-icon">flatten</a>
+								<a href="_treenodes_.treenodes.treenode.html#flatten" class="tsd-kind-icon">flatten</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#load" class="tsd-kind-icon">load</a>
+								<a href="_treenodes_.treenodes.treenode.html#getfreenodes" class="tsd-kind-icon">get<wbr>Free<wbr>Nodes</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_traits_.traits.treenode.html#traverse" class="tsd-kind-icon">traverse</a>
+								<a href="_treenodes_.treenodes.treenode.html#load" class="tsd-kind-icon">load</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_treenodes_.treenodes.treenode.html#traverse" class="tsd-kind-icon">traverse</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_traits_.traits.treenodecomparator.html" class="tsd-kind-icon">Tree<wbr>Node<wbr>Comparator</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_treenodes_.treenodes.dependencynode.html" class="tsd-kind-icon">Dependency<wbr>Node</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../interfaces/_traits_.traits.dependencynode.html" class="tsd-kind-icon">Dependency<wbr>Node</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../interfaces/_traits_.traits.loadable.html" class="tsd-kind-icon">Loadable</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_treenodes_.treenodes.loadable.html" class="tsd-kind-icon">Loadable</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../interfaces/_traits_.traits.treenodetraversalaction.html" class="tsd-kind-icon">Tree<wbr>Node<wbr>Traversal<wbr>Action</a>
+						<a href="../interfaces/_treenodes_.treenodes.treenodetraversalaction.html" class="tsd-kind-icon">Tree<wbr>Node<wbr>Traversal<wbr>Action</a>
 					</li>
 				</ul>
 			</nav>

@@ -102,6 +102,7 @@ module Traits {
 
         shallowCopy():TraitNode {
             var clone = new Trait();
+            clone.load(this);
             var root = new TraitNode;
             root.node = clone;
             return root;
