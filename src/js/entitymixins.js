@@ -757,10 +757,10 @@ Game.EntityMixins.ExperienceGainer = {
             }
         }
         // Check if we gained at least one level.
-        if (levelsGained > 0) {
-            Game.sendMessage(this, "You advance to level %d.", [this._level]);
-            this.raiseEvent('onGainLevel');
-        }
+        // if (levelsGained > 0) {
+        //     Game.sendMessage(this, "You advance to level %d.", [this._level]);
+        //     this.raiseEvent('onGainLevel');
+        // }
     },
     listeners: {
         onKill: function(victim) {

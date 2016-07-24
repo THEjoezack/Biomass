@@ -36,14 +36,22 @@ Attempting to keep a focused listof
  * -Create screen-
  * -Rework tree-
  * Add to inventory
+   * actually buy
    * plugins
  * Add more items
+ * Can't buy traits?
+
+### Up next
 * Ability menu
  * hit "a" to show all abilities
  * selecting an ability prompts for a target
  * be able to purchase abilities through trait system?
  * be able to configure a short-cut key
- * cooldowns
+ * cooldowns?
+ * Abilities
+  * Heal self
+  * Blast (weak ranged attack)
+  * Nuke (strong ranged attack, costs biomass)
 * Consolidate passive, active, crafting screens
 
 #### Backlog
