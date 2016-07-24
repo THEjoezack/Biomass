@@ -33,6 +33,11 @@ Attempting to keep a focused listof
 ### Working on
 * Disable level system
 * Crafting items
+ * -Create screen-
+ * -Rework tree-
+ * Add to inventory
+   * plugins
+ * Add more items
 * Ability menu
  * hit "a" to show all abilities
  * selecting an ability prompts for a target
