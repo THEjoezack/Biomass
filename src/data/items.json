@@ -2,7 +2,7 @@
     "items": [
         {
             "id": "dagger",
-            "name": "dagger",
+            "name": "Dagger",
             "cost": 10,
             "character": ")",
             "foreground": "gray",
