@@ -1,4 +1,4 @@
-Game.Screen.traitScreen = {
+Game.Screen.craftingScreen = {
     setup: function(entity) {
         // Must be called before rendering.
         this._entity = entity;
@@ -7,7 +7,7 @@ Game.Screen.traitScreen = {
     render: function(display) {
         this._display = display;
         var letters = 'abcdefghijklmnopqrstuvwxyz';
-        display.drawText(0, 0, 'Choose a trait to purchase: ');
+        display.drawText(0, 0, 'Choose an item to craft: ');
 
         var selectedTraits = this._entity.getSelectedTraits();
         var comparator = new Traits.TreeNodeComparator();

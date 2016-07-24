@@ -16,6 +16,7 @@ Game.Screen.helpScreen = {
         display.drawText(0, y++, '[x] to examine items');
         display.drawText(0, y++, '[;] to look around you');
         display.drawText(0, y++, '[t] to purchase traits');
+        display.drawText(0, y++, '[t] to craft items');
         display.drawText(0, y++, '[>] to go downstairs');
         display.drawText(0, y++, '[<] to go upstairs');
         display.drawText(0, y++, '[?] to show this help screen');

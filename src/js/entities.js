@@ -13,7 +13,8 @@ Game.PlayerTemplate = {
              Game.EntityMixins.Sight, Game.EntityMixins.MessageRecipient,
              Game.EntityMixins.Equipper,
              Game.EntityMixins.ExperienceGainer, Game.EntityMixins.PlayerStatGainer,
-             Game.EntityMixins.TraitGainer]
+             Game.EntityMixins.TraitGainer,
+             Game.EntityMixins.Crafter]
 };
 
 // Create our central entity repository

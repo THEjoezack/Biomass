@@ -11,6 +11,11 @@ module Traits {
         load(input:any):void;
     }
 
+    interface DependencyNode extends Loadable {
+        id:string;
+        requiresId:string;
+    }
+
     /**
      * Represents abilities that can be added together to enhance
      * character abilities.
@@ -42,13 +47,14 @@ module Traits {
      * Traits represent passive or active abilities that can be
      * acquired by a character.
      */
-    export class Trait implements Loadable {
+    export class Trait implements DependencyNode {
+        
         id: string;
         name: string;
         cost: number;
         effects: Array<CumulativeEffect>;
-        replacesId: string;
         requiresId: string;
+
         constructor(input?:any) {
             if(input != null) {
                 this.load(input);
@@ -56,11 +62,11 @@ module Traits {
                 this.effects = new Array<CumulativeEffect>();
             }
         }
+        
         load(input:any):void {
             this.id = input.id;
             this.name = input.name;
             this.cost = input.cost;
-            this.replacesId = input.replacesId;
             this.requiresId = input.requiresId;
             let effects = new Array<CumulativeEffect>();
             if(input.effects != null) {
@@ -76,42 +82,31 @@ module Traits {
     /**
      * Simple interface that allows for strongly typed closures for traversals
      */
-    interface TraitNodeTraversalAction {
-        (node:TraitNode):boolean;
+    interface TreeNodeTraversalAction<T extends DependencyNode> {
+        (node:TreeNode<T>):boolean;
     }
 
+
     /**
-     * Represents the trait tree.
+     * Simple tree.
      */
-    export class TraitNode implements Loadable {
-        node: Trait;
-        children: Array<TraitNode>;
-        constructor(node?:Trait,children?:Array<TraitNode>) {
-            this.node = node || new Trait();
-            this.children = children || new Array<TraitNode>();
-        }
-        
-        /**
-         * Clones node, ignoring children
-         * Returns true if the node was added.
-         */
-        shallowCopy():TraitNode {
-            var clone = new Trait();
-            clone.load(this.node);
-            
-            var root = new TraitNode();
-            root.node = clone;
-            return root;
+    export abstract class TreeNode<T extends DependencyNode> implements Loadable {
+        node: T;
+        children: Array<TreeNode<T>>;
+
+        constructor(node:T, children?:Array<TreeNode<T>>) {
+            this.node = node;
+            this.children = children || new Array<TreeNode<T>>();
         }
 
         /**
          * Add a node to the appropriate spot in the hierarchy, assuming the requiresId is met.
          * Returns true if the node was added.
          */
-        add(child:TraitNode):boolean {
+        add(child:TreeNode<T>):boolean {
             let itemAdded = false;
             this.traverse(
-                function(node:TraitNode):boolean {
+                function(node:TreeNode<T>):boolean {
                     if(child.node.requiresId == null || node.node.id == child.node.requiresId) {
                         node.children.push(child);
                         itemAdded = true;
@@ -124,13 +119,13 @@ module Traits {
         }
 
         /**
-         * Returns (the first, though there shouldn't be duplicates) TraitNode for a given id.
+         * Returns (the first, though there shouldn't be duplicates) TreeNode for a given id.
          * Returns null if none found.
          */
-        findById(id:string, children?:Array<TraitNode>):TraitNode {
-            let result:TraitNode = null;
+        findById(id:string, children?:Array<TreeNode<T>>):TreeNode<T> {
+            let result:TreeNode<T> = null;
             this.traverse(
-                function(node:TraitNode):boolean {
+                function(node:TreeNode<T>):boolean {
                     if(node.node.id == id) {
                         result = node;
                         return true;
@@ -144,10 +139,10 @@ module Traits {
         /**
          * Turn a tree into an array, depth first. Returns a clone
          */
-        flatten():Array<TraitNode> {
-            let result = new Array<TraitNode>();
+        flatten():Array<TreeNode<T>> {
+            let result = new Array<TreeNode<T>>();
             this.traverse(
-                function(node:TraitNode):boolean {
+                function(node:TreeNode<T>):boolean {
                     if(node.node.id) {
                         result.push(node);
                     }
@@ -163,7 +158,7 @@ module Traits {
          * then the execution will stop.
          * Returns true if condition is action returns true, false otherwise.
          */
-        traverse(action:TraitNodeTraversalAction, node?:TraitNode):boolean {
+        traverse(action:TreeNodeTraversalAction<T>, node?:TreeNode<T>):boolean {
             let root = node || this;
             let rootResult = action(root);
 
@@ -179,6 +174,54 @@ module Traits {
             }
 
             return false;
+        }
+
+        abstract load(input:any):void;
+    }
+
+    /**
+     * Compares TreeNode to each other
+     */
+    export class TreeNodeComparator<T extends DependencyNode> {
+        /**
+         * Finds items that either have no requirements or the requirements have been met in another (optional tree)
+         */
+        getFreeNodes(source:TreeNode<T>, selected?:TreeNode<T>):Array<TreeNode<T>> {
+            let result = new Array<TreeNode<T>>();
+
+            // flatten the source
+            let flattenedSource = source.flatten();
+
+            // loop through and look for items that are NOT already selected
+            // and either have no requirements, or have their requirements fulfilled
+            for(var i = 0; i < flattenedSource.length; i++) {
+                let sourceNode = flattenedSource[i];
+                let sourceTrait = sourceNode.node;
+                let sourceId = sourceTrait.id;
+                let selectedNode = selected ? selected.findById(sourceId) : null;
+
+                if(selectedNode) {
+                    // trait has already been selected
+                    // do nothing
+                } else if (sourceTrait.requiresId == null) {
+                    // has no requirements, automatically available
+                    result.push(sourceNode);
+                } else if(selected && selected.findById(sourceTrait.requiresId)) {
+                    result.push(sourceNode);
+                } else {
+                    // no match!
+                }
+            }
+
+            return result;
+        }
+
+    }
+
+    export class TraitNode extends TreeNode<Trait> {
+
+        constructor(node?:Trait, children?:Array<TraitNode>) {
+            super(node || new Trait(), children || new Array<TraitNode>());
         }
 
         load(input:any):void {
@@ -205,45 +248,14 @@ module Traits {
                 }
             }
         }
-    }
 
-    /**
-     * Compares TraitNode to each other
-     */
-    export class TraitNodeComparator {
-        /**
-         * Finds items that either have no requirements or the requirements have been met in another (optional tree)
-         */
-        getPurchasableTraits(source:TraitNode,previouslySelected?:TraitNode):Array<TraitNode> {
-            let selected = previouslySelected || new TraitNode();
-            let result = new Array<TraitNode>();
-
-            // flatten the source
-            let flattenedSource = source.flatten();
-
-            // loop through and look for items that are NOT already selected
-            // and either have no requirements, or have their requirements fulfilled
-            for(var i = 0; i < flattenedSource.length; i++) {
-                let sourceNode = flattenedSource[i];
-                let sourceTrait = sourceNode.node;
-                let sourceId = sourceTrait.id;
-                let selectedNode = selected.findById(sourceId);
-
-                if(selectedNode) {
-                    // trait has already been selected
-                    // do nothing
-                } else if (sourceTrait.requiresId == null) {
-                    // has no requirements, automatically available
-                    result.push(sourceNode);
-                } else if(selected.findById(sourceTrait.requiresId)) {
-                    result.push(sourceNode);
-                } else {
-                    // no match!
-                }
-            }
-
-            return result;
+        shallowCopy():TraitNode {
+            var clone = new Trait();
+            var root = new TraitNode;
+            root.node = clone;
+            return root;
         }
 
     }
+
 }

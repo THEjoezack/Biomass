@@ -3,6 +3,7 @@ var transpiled = fs.readFileSync('./dist/Traits.js','utf-8');
 eval(transpiled);
 
 describe("A trait", function() {
+
     it("can be loaded from a json object", function() {
         var trait = new Traits.Trait({ name: 'name' });
         expect(trait.name).toEqual('name');
@@ -23,16 +24,20 @@ describe("A trait", function() {
         expect(trait.effects[0].description).toEqual('test 1');
         expect(trait.effects[1].description).toEqual('test 2');
     });
+
 });
 
 describe("A cumulative effect", function() {
+    
     it("can be loaded from a json object", function() {
         var effect = new Traits.CumulativeEffect({ description: 'description' });
         expect(effect.description).toEqual('description');
     });
+
 });
 
 describe("A trait node comparator", function() {
+    
     var sourceList = {
         "traits": [
             {
@@ -49,22 +54,22 @@ describe("A trait node comparator", function() {
     };
 
     it("finds traits that have no requirements", function() {
-        var target = new Traits.TraitNodeComparator();
-        
+        var target = new Traits.TreeNodeComparator();
+
         var source = new Traits.TraitNode();
         source.load(sourceList);
 
-        var actual = target.getPurchasableTraits(source);
+        var actual = target.getFreeNodes(source);
         expect(actual.length).toEqual(2); // not great tests...
     });
 
     it("finds no traits when all have been selected", function() {
-        var target = new Traits.TraitNodeComparator();
+        var target = new Traits.TreeNodeComparator();
         
         var source = new Traits.TraitNode();
         source.load(sourceList);
 
-        var actual = target.getPurchasableTraits(source,source);
+        var actual = target.getFreeNodes(source,source);
         expect(actual.length).toEqual(0); // not great tests...
     });
 
@@ -84,8 +89,8 @@ describe("A trait node comparator", function() {
             ]
         });
         
-        var target = new Traits.TraitNodeComparator();
-        var actual = target.getPurchasableTraits(source,selected);
+        var target = new Traits.TreeNodeComparator();
+        var actual = target.getFreeNodes(source,selected);
         expect(actual.length).toEqual(1); // not great tests...
         expect(actual[0].node.id).toEqual("children");
     });
@@ -192,6 +197,7 @@ describe("A trait node", function() {
     });
 
     describe("that is loaded from a json object (array)", function() {
+
         it("and can have nodes with no children", function() {
             var root = new Traits.TraitNode();
             root.load(sampleInput); // blech...should probably change the constructor so it loads by default?
@@ -199,6 +205,7 @@ describe("A trait node", function() {
             expect(actual.children.length).toBe(0);
             expect(root.children.length).toBe(2);
         });
+
         it("and can have nodes with children", function() {
             var root = new Traits.TraitNode();
             root.load(sampleInput); // blech...should probably change the constructor so it loads by default?
@@ -206,6 +213,7 @@ describe("A trait node", function() {
             expect(actual).not.toBe(null);
             expect(actual.children.length).toBe(1);
         });
+
         it("and can find children", function() {
             var root = new Traits.TraitNode();
             root.load(sampleInput); // blech...should probably change the constructor so it loads by default?
@@ -213,7 +221,7 @@ describe("A trait node", function() {
             expect(actual).not.toBe(null);
             expect(actual.children.length).toBe(0);
         });
-        
+
     });
 
 });

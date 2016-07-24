@@ -684,6 +684,13 @@ Game.EntityMixins.TraitGainer = {
     }
 };
 
+Game.EntityMixins.Crafter = {
+    name: 'Crafter',
+    init: function(template) {
+        //this._selectedTraits = new Traits.TraitNode();
+    }
+};
+
 Game.EntityMixins.ExperienceGainer = {
     name: 'ExperienceGainer',
     init: function(template) {

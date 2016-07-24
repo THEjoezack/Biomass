@@ -3,18 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Biomass</title>
+	<title>TreeNodeTraversalAction | Biomass</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="assets/js/modernizr.js"></script>
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Biomass</a>
+					<a href="../index.html" class="title">Biomass</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,123 +54,114 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_traits_.html">&quot;Traits&quot;</a>
+				</li>
+				<li>
+					<a href="../modules/_traits_.traits.html">Traits</a>
+				</li>
+				<li>
+					<a href="_traits_.traits.treenodetraversalaction.html">TreeNodeTraversalAction</a>
 				</li>
 			</ul>
-			<h1> Biomass</h1>
+			<h1>Interface TreeNodeTraversalAction&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<p>Simple roguelike expiriment to gain some experience (namely TypeScript) and have a little fun along the way.</p>
-				<p>Standing on the shoulders of greatness:
-					<a href="https://github.com/ondras/rot.js">https://github.com/ondras/rot.js</a>
-				<a href="https://github.com/jokeofweek/jsrogue/">https://github.com/jokeofweek/jsrogue/</a></p>
-				<p>Play me here: <a href="https://thejoezack.github.io/Biomass/">https://thejoezack.github.io/Biomass/</a></p>
-				<h3 id="project-goals">Project Goals</h3>
-				<ul>
-					<li>Have fun</li>
-					<li>Learn TypeScript</li>
-					<li>Learn more about Roguelikes</li>
-					<li>Focus on the minimum viable product!</li>
-				</ul>
-				<h2 id="get-started-developing">Get Started developing</h2>
-				<ul>
-					<li>npm cache clean #(if you run into anything weird)</li>
-					<li>npm install gulp #(if you don&#39;t have it already)</li>
-					<li>npm install #(from dir)</li>
-					<li>gulp bower #(get ROT)</li>
-					<li>gulp</li>
-					<li>gulp test</li>
-					<li>npm install -g http-server</li>
-					<li>http-server</li>
-					<li>go to <a href="http://localhost:8080">http://localhost:8080</a></li>
-				</ul>
-				<h2 id="active-deveopment">Active deveopment</h2>
-				<p>Developing a tree based passive trait system that will allow the player to purchase and upgrade traits using the xp (&quot;biomass&quot;) they accumulate.</p>
-				<p>Only have place holder data in place, and there&#39;s still quite a bit to do.</p>
-				<p>Attempting to keep a focused listof</p>
-				<h3 id="working-on">Working on</h3>
-				<ul>
-					<li>Disable level system</li>
-					<li>Crafting items</li>
-					<li>Ability menu<ul>
-							<li>hit &quot;a&quot; to show all abilities</li>
-							<li>selecting an ability prompts for a target</li>
-							<li>be able to purchase abilities through trait system?</li>
-							<li>be able to configure a short-cut key</li>
-							<li>cooldowns</li>
-						</ul>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Simple interface that allows for strongly typed closures for traversals</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T<span class="tsd-signature-symbol">: </span><a href="_traits_.traits.dependencynode.html" class="tsd-signature-type">DependencyNode</a></h4>
 					</li>
-					<li>Consolidate passive, active, crafting screens</li>
 				</ul>
-				<h4 id="backlog">Backlog</h4>
-				<ul>
-					<li>Better trait integration<ul>
-							<li>Character screen with status and traits</li>
-							<li>More traits!</li>
-							<li>What to do about the level system?</li>
-							<li>Evolution theming (ongoing)</li>
-							<li>Basic UI/UX improvements (ongoing)</li>
-							<li>Better trait tuning</li>
-							<li>Monsters should get traits too!</li>
-						</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">TreeNodeTraversalAction</span>
 					</li>
-					<li>Get rid of hunger?</li>
-					<li>Trait improvements<ul>
-							<li>Need to show descriptions of selectable items</li>
-							<li>XP gain?</li>
-							<li>More advanced traits</li>
-							<li>Mutually Exclusive traits</li>
-							<li>Digging</li>
-							<li>Passive Speed</li>
-							<li>Passive Regeneration</li>
-							<li>Conditional bonus?</li>
-							<li>Percentage bonuses</li>
-							<li>Active abilities?</li>
-							<li>Different Damage/Resistant types</li>
-							<li>Replacements should actually replace items</li>
-							<li>Player should be alerted when they can afford a new trait? </li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="../classes/_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/THEjoezack/Biomass/blob/7f66736/src/ts/Traits.ts#L85">Traits.ts:85</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Simple interface that allows for strongly typed closures for traversals</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>node: <a href="../classes/_traits_.traits.treenode.html" class="tsd-signature-type">TreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
 						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 					</li>
-					<li>Configurable keys</li>
 				</ul>
-				<h3 id="core-mechanics">Core mechanics</h3>
-				<ul>
-					<li>Evolution theme, monsters should evolve too!</li>
-					<li>Use &quot;biomass&quot; as singular currency to level up, evolve, heal, buff items</li>
-				</ul>
-				<h2 id="nice-to-haves-that-i-care-about">Nice to haves that I care about</h2>
-				<ul>
-					<li>passive trait evolution system! (in progress)</li>
-					<li>a game should last no longer than 30 minutes</li>
-					<li>tiles!</li>
-					<li>unlock system </li>
-					<li>autopickup some items</li>
-					<li>good targetting</li>
-					<li>Not too many items</li>
-				</ul>
-			</div>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_main_.html">"<wbr>Main"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_traits_.html">"<wbr>Traits"</a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_traits_.traits.cumulativeeffect.html" class="tsd-kind-icon">Cumulative<wbr>Effect</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_traits_.traits.trait.html" class="tsd-kind-icon">Trait</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/_traits_.traits.traitnode.html" class="tsd-kind-icon">Trait<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/_traits_.traits.treenode.html" class="tsd-kind-icon">Tree<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/_traits_.traits.treenodecomparator.html" class="tsd-kind-icon">Tree<wbr>Node<wbr>Comparator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_traits_.traits.dependencynode.html" class="tsd-kind-icon">Dependency<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_traits_.traits.loadable.html" class="tsd-kind-icon">Loadable</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_traits_.traits.treenodetraversalaction.html" class="tsd-kind-icon">Tree<wbr>Node<wbr>Traversal<wbr>Action</a>
+					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>
@@ -239,7 +230,7 @@
 	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

@@ -165,6 +165,10 @@ Game.Screen.playScreen = {
                 // Show the trait screen
                 this.showEntitySubScreen(Game.Screen.traitScreen, this._player);
                 return;
+            } else if (inputData.keyCode === ROT.VK_C) {
+                // Show the crafting screen
+                this.showEntitySubScreen(Game.Screen.craftingScreen, this._player);
+                return;
             } else if (inputData.keyCode === ROT.VK_I) {
                 // Show the inventory screen
                 this.showItemsSubScreen(Game.Screen.inventoryScreen, this._player.getItems(),

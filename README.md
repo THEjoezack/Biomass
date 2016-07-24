@@ -31,12 +31,15 @@ Only have place holder data in place, and there's still quite a bit to do.
 Attempting to keep a focused listof
 
 ### Working on
+* Disable level system
+* Crafting items
 * Ability menu
  * hit "a" to show all abilities
  * selecting an ability prompts for a target
  * be able to purchase abilities through trait system?
  * be able to configure a short-cut key
  * cooldowns
+* Consolidate passive, active, crafting screens
 
 #### Backlog
 * Better trait integration
