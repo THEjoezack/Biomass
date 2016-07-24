@@ -1,6 +1,10 @@
 var fs = require('fs');
-var transpiled = fs.readFileSync('./dist/Traits.js','utf-8');
+transpiled = fs.readFileSync('./dist/TreeNodes.js','utf-8');
 eval(transpiled);
+
+transpiled = fs.readFileSync('./dist/Traits.js','utf-8');
+eval(transpiled);
+
 
 describe("A trait", function() {
 
