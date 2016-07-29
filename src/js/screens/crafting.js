@@ -67,18 +67,32 @@ Game.Screen.craftingScreen = {
                 // to know what letter of the alphabet we used.
                 var index = inputData.keyCode - ROT.VK_A;
                 if (this._options[index]) {
-                    // add to inventory
                     // todo fill in plugins?
                     // deduct cost
                     var result = false;
                     if(result) {
                         Game.refresh();
                     } else {
-                        this._display.drawText(
-                            0,
-                            this._lineIndex + 1, 
-                            '%c{yellow}You can\'t afford that right now!'
-                        );
+                        var item = this._options[index].node;
+                        var name = item.name;
+                        var cost = item.cost;
+                        var deficit = cost - this._entity.getExperience();
+                        if(deficit <= 0) {
+                            this._entity.spendExperience(cost);
+                            item = Game.ItemRepository.create(item.id, {}); // TODO need to consolidate the two item repositories!
+                            this._entity.addItem(item);    
+                            this._display.drawText(
+                                0,
+                                this._lineIndex + 1, 
+                                '%c{yellow}' + name + ' has been added to your inventory. Don\'t forget to equip it!'
+                            );    
+                        } else {
+                            this._display.drawText(
+                                0,
+                                this._lineIndex + 1, 
+                                '%c{yellow}You can\'t afford to craft a ' + name + ' right now!'
+                            );
+                        }
                     }
                 }
             }

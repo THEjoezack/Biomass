@@ -1,21 +1,34 @@
 {
     "items": [
         {
+            "id": "tunic",
+            "name": "Tunic",
+            "cost": 5,
+            "character": "]",
+            "foreground": "green",
+            "defenseValue": 2,
+            "wieldable": true,
+            "tags": "Equipable"
+        },
+        {
             "id": "dagger",
             "name": "Dagger",
             "cost": 10,
             "character": ")",
-            "foreground": "gray",
+            "foreground": "yellow",
             "attackValue": 5,
             "wieldable": true,
-            "tags": "Equipable",
-            "effects": [
-                {
-                    "description": "Increase sight radius by 2",
-                    "sightRadius": 2,
-                    "on": "passive"
-                }
-            ]
+            "tags": "Equipable"
+        }, {
+            "id": "staff",
+            "name": "Staff",
+            "cost": 15,
+            "character": ")",
+            "foreground": "gray",
+            "attackValue": 2,
+            "defenseValue": 5,
+            "wieldable": true,
+            "tags": "Equipable"
         }
     ]
 }

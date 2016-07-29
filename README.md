@@ -31,17 +31,17 @@ Only have place holder data in place, and there's still quite a bit to do.
 Attempting to keep a focused listof
 
 ### Working on
-* Disable level system
+* -Disable level system-
 * Crafting items
  * -Create screen-
  * -Rework tree-
- * Add to inventory
-   * actually buy
-   * plugins
+ * -Add to inventory-
+ * -Actually buy the items-
+ * Pull item repository items from items.json
  * Add more items
- * Can't buy traits?
+* Can't buy traits?
 
-### Up next
+### Planned for next
 * Ability menu
  * hit "a" to show all abilities
  * selecting an ability prompts for a target
